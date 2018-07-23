@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target 'ontology-swift-sdk' do
+    pod 'UInt256', :git => 'https://github.com/hyu2018/UInt256.git'
+    pod 'SwiftyJSON'
+end
