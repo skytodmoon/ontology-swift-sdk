@@ -17,6 +17,10 @@
 		2C9FD29A210616240047EC38 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD299210616240047EC38 /* Result.swift */; };
 		2C9FD29C210617660047EC38 /* WebsocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD29B210617660047EC38 /* WebsocketClient.swift */; };
 		2C9FD29F210618CD0047EC38 /* IConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD29E210618CD0047EC38 /* IConnector.swift */; };
+		2C9FD2A521062A110047EC38 /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD2A421062A110047EC38 /* BinaryCodable.swift */; };
+		2C9FD2A721062A180047EC38 /* BinaryCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD2A621062A180047EC38 /* BinaryCodableExtensions.swift */; };
+		2C9FD2A921062A1E0047EC38 /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD2A821062A1E0047EC38 /* BinaryDecoder.swift */; };
+		2C9FD2AB21062A240047EC38 /* BinaryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD2AA21062A240047EC38 /* BinaryEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		2C9FD299210616240047EC38 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2C9FD29B210617660047EC38 /* WebsocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketClient.swift; sourceTree = "<group>"; };
 		2C9FD29E210618CD0047EC38 /* IConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IConnector.swift; sourceTree = "<group>"; };
+		2C9FD2A421062A110047EC38 /* BinaryCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodable.swift; sourceTree = "<group>"; };
+		2C9FD2A621062A180047EC38 /* BinaryCodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodableExtensions.swift; sourceTree = "<group>"; };
+		2C9FD2A821062A1E0047EC38 /* BinaryDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
+		2C9FD2AA21062A240047EC38 /* BinaryEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryEncoder.swift; sourceTree = "<group>"; };
 		53CBFB0565F646BFF7DF3B3B /* Pods_ontology_swift_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ontology_swift_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E791B878F92553D65804A3 /* Pods-ontology-swift-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontology-swift-sdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		C9047B6D112B226A5D99D1B4 /* Pods-ontology-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontology-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +94,7 @@
 		2C3B229321060036005F43B3 /* ontology-swift-sdk */ = {
 			isa = PBXGroup;
 			children = (
+				2C9FD2A2210629E80047EC38 /* tools */,
 				2C9FD2A021061FFA0047EC38 /* core */,
 				2C9FD297210610240047EC38 /* network */,
 				2C9FD28F210605CF0047EC38 /* sdk */,
@@ -186,6 +195,25 @@
 			children = (
 			);
 			path = transaction;
+			sourceTree = "<group>";
+		};
+		2C9FD2A2210629E80047EC38 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				2C9FD2A321062A020047EC38 /* binary */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		2C9FD2A321062A020047EC38 /* binary */ = {
+			isa = PBXGroup;
+			children = (
+				2C9FD2A421062A110047EC38 /* BinaryCodable.swift */,
+				2C9FD2A621062A180047EC38 /* BinaryCodableExtensions.swift */,
+				2C9FD2A821062A1E0047EC38 /* BinaryDecoder.swift */,
+				2C9FD2AA21062A240047EC38 /* BinaryEncoder.swift */,
+			);
+			path = binary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,11 +331,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3B229721060036005F43B3 /* ViewController.swift in Sources */,
+				2C9FD2A521062A110047EC38 /* BinaryCodable.swift in Sources */,
 				2C9FD29621060E6B0047EC38 /* ConnectMgr.swift in Sources */,
 				2C9FD29C210617660047EC38 /* WebsocketClient.swift in Sources */,
+				2C9FD2A921062A1E0047EC38 /* BinaryDecoder.swift in Sources */,
 				2C9FD29F210618CD0047EC38 /* IConnector.swift in Sources */,
 				2C9FD29A210616240047EC38 /* Result.swift in Sources */,
+				2C9FD2AB21062A240047EC38 /* BinaryEncoder.swift in Sources */,
 				2C3B229521060036005F43B3 /* AppDelegate.swift in Sources */,
+				2C9FD2A721062A180047EC38 /* BinaryCodableExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
