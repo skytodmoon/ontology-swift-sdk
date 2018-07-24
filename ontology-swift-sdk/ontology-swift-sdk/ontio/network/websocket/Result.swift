@@ -7,7 +7,7 @@
 //
 
 
-struct Result {
+public struct Result {
     var Action: String
     var Error: CLong
     var Result: Any
