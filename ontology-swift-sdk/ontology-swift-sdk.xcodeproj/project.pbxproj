@@ -20,9 +20,13 @@
 		D1BE93C42106CB2B00D1A7CB /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE93C02106CB2B00D1A7CB /* BinaryCodable.swift */; };
 		D1BE93C52106CB2B00D1A7CB /* BinaryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE93C12106CB2B00D1A7CB /* BinaryEncoder.swift */; };
 		D1BE93C62106CB2B00D1A7CB /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE93C22106CB2B00D1A7CB /* BinaryDecoder.swift */; };
+		D1D75C17204B9187A04F5232 /* Pods_ontology_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A841B71BA89A16B1FC505B /* Pods_ontology_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00ED59A098B58A07E4CDBB06 /* Pods-ontology-swift-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontology-swift-sdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk.debug.xcconfig"; sourceTree = "<group>"; };
+		7EF2A5C38EC4B514DD9BA686 /* Pods-ontology-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontology-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
+		A9A841B71BA89A16B1FC505B /* Pods_ontology_swift_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ontology_swift_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BE939B2106CA8200D1A7CB /* ontology-swift-sdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ontology-swift-sdk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BE939E2106CA8200D1A7CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1BE93A02106CA8200D1A7CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1D75C17204B9187A04F5232 /* Pods_ontology_swift_sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05CA1FDA182A30EBD8F473C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9A841B71BA89A16B1FC505B /* Pods_ontology_swift_sdk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E0D885EE66C579E86C291BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00ED59A098B58A07E4CDBB06 /* Pods-ontology-swift-sdk.debug.xcconfig */,
+				7EF2A5C38EC4B514DD9BA686 /* Pods-ontology-swift-sdk.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D1BE93922106CA8200D1A7CB = {
 			isa = PBXGroup;
 			children = (
 				D1BE939D2106CA8200D1A7CB /* ontology-swift-sdk */,
 				D1BE939C2106CA8200D1A7CB /* Products */,
+				4E0D885EE66C579E86C291BC /* Pods */,
+				05CA1FDA182A30EBD8F473C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1BE93AD2106CA8200D1A7CB /* Build configuration list for PBXNativeTarget "ontology-swift-sdk" */;
 			buildPhases = (
+				81A9A987E6B9AB1799BC2A21 /* [CP] Check Pods Manifest.lock */,
 				D1BE93972106CA8200D1A7CB /* Sources */,
 				D1BE93982106CA8200D1A7CB /* Frameworks */,
 				D1BE93992106CA8200D1A7CB /* Resources */,
+				6A4DD112FA50C613F2A08F88 /* [CP] Embed Pods Frameworks */,
+				5AC2421E3412F197F2182F7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +237,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AC2421E3412F197F2182F7D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A4DD112FA50C613F2A08F88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UInt256/UInt256.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UInt256.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81A9A987E6B9AB1799BC2A21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ontology-swift-sdk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1BE93972106CA8200D1A7CB /* Sources */ = {
@@ -360,6 +443,7 @@
 		};
 		D1BE93AE2106CA8200D1A7CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00ED59A098B58A07E4CDBB06 /* Pods-ontology-swift-sdk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +459,7 @@
 		};
 		D1BE93AF2106CA8200D1A7CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EF2A5C38EC4B514DD9BA686 /* Pods-ontology-swift-sdk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
