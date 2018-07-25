@@ -14,6 +14,7 @@
 		D183D97C21070D950025EF8B /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D97B21070D950025EF8B /* Exception.swift */; };
 		D183D97F2107115B0025EF8B /* KeyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D97E2107115B0025EF8B /* KeyType.swift */; };
 		D183D98121071D820025EF8B /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D98021071D820025EF8B /* ErrorCode.swift */; };
+		D183D9862108521B0025EF8B /* SignatureScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D9852108521B0025EF8B /* SignatureScheme.swift */; };
 		D1BE939F2106CA8200D1A7CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE939E2106CA8200D1A7CB /* AppDelegate.swift */; };
 		D1BE93A12106CA8200D1A7CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE93A02106CA8200D1A7CB /* ViewController.swift */; };
 		D1BE93A42106CA8200D1A7CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BE93A22106CA8200D1A7CB /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		D183D97B21070D950025EF8B /* Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
 		D183D97E2107115B0025EF8B /* KeyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyType.swift; sourceTree = "<group>"; };
 		D183D98021071D820025EF8B /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		D183D9852108521B0025EF8B /* SignatureScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureScheme.swift; sourceTree = "<group>"; };
 		D1BE939B2106CA8200D1A7CB /* ontology-swift-sdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ontology-swift-sdk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BE939E2106CA8200D1A7CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1BE93A02106CA8200D1A7CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				D183D97E2107115B0025EF8B /* KeyType.swift */,
+				D183D9852108521B0025EF8B /* SignatureScheme.swift */,
 			);
 			path = crypto;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				D1BE93BC2106CB1B00D1A7CB /* ConnectMgr.swift in Sources */,
 				D1BE93C32106CB2B00D1A7CB /* BinaryCodableExtensions.swift in Sources */,
 				D183D98121071D820025EF8B /* ErrorCode.swift in Sources */,
+				D183D9862108521B0025EF8B /* SignatureScheme.swift in Sources */,
 				D183D973210700C00025EF8B /* TransactionType.swift in Sources */,
 				D183D97C21070D950025EF8B /* Exception.swift in Sources */,
 				D1BE93A12106CA8200D1A7CB /* ViewController.swift in Sources */,

@@ -7,6 +7,12 @@
 //
 
 public class Account {
-    fileprivate KeyType: KeyType
+    fileprivate var keyType: KeyType?
+    fileprivate var curveParams:[AnyObject]?
+    fileprivate var privateKeyStr:String?
+    fileprivate var publicKeyStr:String?
+    fileprivate var addressU160:Address?
+    fileprivate var signatureScheme:SignatureScheme?
+    
     
 }

@@ -89,7 +89,7 @@ enum ErrorCode: Error{
     case OtherError
 
     
-    func withErrorStr(message: String) -> String {
+    static func withErrorStr(message: String) -> String {
         switch self {
         //account error
         case .InvalidParams:

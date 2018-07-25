@@ -14,15 +14,24 @@ enum KeyType: UInt8{
     var label: UInt8 {
         return rawValue
     }
-    
-//    init(b: UInt8){
-//        label = b
-//    }
-//
+
     static func fromLabel(label: UInt8) throws -> KeyType{
         guard let tempType = KeyType(rawValue: label)
             else { throw ErrorCode.InvalidParams }
         return tempType
+    }
+    
+    static func fromPubkey(pubkey: [UInt8]) throws ->KeyType {
+        do {
+            if pubkey.count == 33 {
+                return KeyType.ECDSA
+            }else{
+                return try KeyType.fromLabel(label: pubkey[0])
+            }
+            
+        }catch ErrorCode.InvalidParams{
+            print(ErrorCode.withErrorStr(message: ""))
+        }
     }
 }
 
