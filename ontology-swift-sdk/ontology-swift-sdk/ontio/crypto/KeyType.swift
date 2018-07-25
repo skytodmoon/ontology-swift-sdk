@@ -21,7 +21,7 @@ enum KeyType: UInt8{
 //
     static func fromLabel(label: UInt8) throws -> KeyType{
         guard let tempType = KeyType(rawValue: label)
-            else { throw ErrorCode }
+            else { throw ErrorCode.InvalidParams }
         return tempType
     }
 }
