@@ -5,7 +5,7 @@
 //  Created by SH-JRY-0073 on 2018/7/24.
 //  Copyright © 2018年 com.wm. All rights reserved.
 //
-
+import Foundation
 enum ErrorCode: Error{
     //account error
     case InvalidParams
@@ -89,7 +89,7 @@ enum ErrorCode: Error{
     case OtherError
 
     
-    static func withErrorStr(message: String) -> String {
+    func withErrorStr(message: String) -> String {
         switch self {
         //account error
         case .InvalidParams:
@@ -244,7 +244,11 @@ enum ErrorCode: Error{
     }
     func getError(code: Int, msg: String) -> String {
         let dic = ["Error": code,"Desc": msg] as [String : Any]
-        return dic.description
+        if let jsonData = try? JSONEncoder().encode(dic)  {
+            if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
+                print("----------------Base--------------------")
+                return jsonString
+            }
+        }
     }
-
 }
