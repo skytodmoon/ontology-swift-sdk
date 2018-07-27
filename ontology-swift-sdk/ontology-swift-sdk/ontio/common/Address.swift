@@ -25,13 +25,17 @@ public class Address {
             throw Exception.IllegalArgumentException
         }
         //let v: [UInt8] = Array(tempValue.utf8)
-        let v: [UInt8] = try Helper.hexToBytes(value: tempValue)
-        address = try getAddress(count: 20, value:v)
+        let v: [UInt8] = try Helper.hexToBytes(hexStr: tempValue)
+        if v.count != 20 {
+            throw Exception.IllegalArgumentException
+        }
+        address = v
+        //address = try getAddress(count: 20, value:v)
     }
 
     func getAddress(count: Int, value:[UInt8]) throws -> [UInt8] {
         if value.count != count{
-            throw Exception.IllegalArgumentException
+            
         }
     }
 }

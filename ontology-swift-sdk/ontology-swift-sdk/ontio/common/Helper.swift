@@ -8,18 +8,18 @@
 
 import Foundation
 public class Helper{
-    static public func hexToBytes(value: String) throws -> [UInt8] {
-        if value.count == 0 {
+    static public func hexToBytes(hexStr: String) throws -> [UInt8] {
+        if hexStr.count == 0 {
             return [UInt8]()
         }
-        if value.count % 2 == 1 {
+        if hexStr.count % 2 == 1 {
             throw Exception.IllegalArgumentException
         }
         
-        var result: [UInt8] = [UInt8](repeating:0, count:value.count/2)
-        for i in 0...value.count {
+        var result: [UInt8] = [UInt8](repeating:0, count:hexStr.count/2)
+        for i in 0...hexStr.count {
             let range: Range = Range.init(NSRange(location: i * 2, length: i * 2 + 2))!
-            let tempStr = value[range]
+            let tempStr = hexStr[range]
             result[i] = UInt8(hexStringToInt(from: tempStr))
         }
         
