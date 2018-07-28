@@ -15,6 +15,9 @@
 		D183D97F2107115B0025EF8B /* KeyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D97E2107115B0025EF8B /* KeyType.swift */; };
 		D183D98121071D820025EF8B /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D98021071D820025EF8B /* ErrorCode.swift */; };
 		D183D9862108521B0025EF8B /* SignatureScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D9852108521B0025EF8B /* SignatureScheme.swift */; };
+		D183D988210962EF0025EF8B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D987210962EE0025EF8B /* Helper.swift */; };
+		D183D996210C203A0025EF8B /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D995210C20390025EF8B /* Curve.swift */; };
+		D183D998210C211A0025EF8B /* CurveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183D997210C211A0025EF8B /* CurveModel.swift */; };
 		D1BE939F2106CA8200D1A7CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE939E2106CA8200D1A7CB /* AppDelegate.swift */; };
 		D1BE93A12106CA8200D1A7CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE93A02106CA8200D1A7CB /* ViewController.swift */; };
 		D1BE93A42106CA8200D1A7CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BE93A22106CA8200D1A7CB /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 		D183D97E2107115B0025EF8B /* KeyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyType.swift; sourceTree = "<group>"; };
 		D183D98021071D820025EF8B /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		D183D9852108521B0025EF8B /* SignatureScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureScheme.swift; sourceTree = "<group>"; };
+		D183D987210962EE0025EF8B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		D183D995210C20390025EF8B /* Curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
+		D183D997210C211A0025EF8B /* CurveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveModel.swift; sourceTree = "<group>"; };
 		D1BE939B2106CA8200D1A7CB /* ontology-swift-sdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ontology-swift-sdk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BE939E2106CA8200D1A7CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1BE93A02106CA8200D1A7CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 				D183D97521070D390025EF8B /* Address.swift */,
 				D183D97B21070D950025EF8B /* Exception.swift */,
 				D183D98021071D820025EF8B /* ErrorCode.swift */,
+				D183D987210962EE0025EF8B /* Helper.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -143,6 +150,8 @@
 			children = (
 				D183D97E2107115B0025EF8B /* KeyType.swift */,
 				D183D9852108521B0025EF8B /* SignatureScheme.swift */,
+				D183D995210C20390025EF8B /* Curve.swift */,
+				D183D997210C211A0025EF8B /* CurveModel.swift */,
 			);
 			path = crypto;
 			sourceTree = "<group>";
@@ -260,7 +269,6 @@
 				D1BE93982106CA8200D1A7CB /* Frameworks */,
 				D1BE93992106CA8200D1A7CB /* Resources */,
 				6A4DD112FA50C613F2A08F88 /* [CP] Embed Pods Frameworks */,
-				5AC2421E3412F197F2182F7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,21 +327,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5AC2421E3412F197F2182F7D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6A4DD112FA50C613F2A08F88 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,11 +334,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UInt256/UInt256.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UInt256.framework",
 			);
@@ -387,12 +382,15 @@
 				D1BE93C32106CB2B00D1A7CB /* BinaryCodableExtensions.swift in Sources */,
 				D183D98121071D820025EF8B /* ErrorCode.swift in Sources */,
 				D183D9862108521B0025EF8B /* SignatureScheme.swift in Sources */,
+				D183D988210962EF0025EF8B /* Helper.swift in Sources */,
 				D183D973210700C00025EF8B /* TransactionType.swift in Sources */,
 				D183D97C21070D950025EF8B /* Exception.swift in Sources */,
+				D183D998210C211A0025EF8B /* CurveModel.swift in Sources */,
 				D1BE93A12106CA8200D1A7CB /* ViewController.swift in Sources */,
 				D1BE93B72106CB1300D1A7CB /* WebsocketClient.swift in Sources */,
 				D1BE93C42106CB2B00D1A7CB /* BinaryCodable.swift in Sources */,
 				D1BE93B82106CB1300D1A7CB /* IConnector.swift in Sources */,
+				D183D996210C203A0025EF8B /* Curve.swift in Sources */,
 				D1BE93C52106CB2B00D1A7CB /* BinaryEncoder.swift in Sources */,
 				D1BE939F2106CA8200D1A7CB /* AppDelegate.swift in Sources */,
 				D183D9712106F4FB0025EF8B /* Transaction.swift in Sources */,

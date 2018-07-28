@@ -13,6 +13,4 @@ public class Account {
     fileprivate var publicKeyStr:String?
     fileprivate var addressU160:Address?
     fileprivate var signatureScheme:SignatureScheme?
-    
-    
 }
