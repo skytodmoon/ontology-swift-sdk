@@ -30,7 +30,7 @@ enum KeyType: UInt8{
             }
             
         }catch ErrorCode.InvalidParams{
-            print(ErrorCode.withErrorStr(message: ""))
+            print(ErrorCode.InvalidParams.withErrorStr(message: ""))
         }
     }
 }

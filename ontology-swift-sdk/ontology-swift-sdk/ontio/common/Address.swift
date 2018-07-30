@@ -12,6 +12,7 @@
 public class Address {
    static let ZERO:Address? = nil
    static let COIN_VERSION: UInt8 = 0x17
+    var address: [UInt8]?
     init(value: String) throws {
         if value.count == 0 {
             throw Exception.NullPointerException
@@ -23,9 +24,18 @@ public class Address {
         if tempValue.count != 40 {
             throw Exception.IllegalArgumentException
         }
-        let v: [UInt8] = Array(tempValue.utf8)
+        //let v: [UInt8] = Array(tempValue.utf8)
+        let v: [UInt8] = try Helper.hexToBytes(hexStr: tempValue)
+        if v.count != 20 {
+            throw Exception.IllegalArgumentException
+        }
+        address = v
+        //address = try getAddress(count: 20, value:v)
     }
-    init(value: [UInt8]) {
-        
+
+    func getAddress(count: Int, value:[UInt8]) throws -> [UInt8] {
+        if value.count != count{
+            
+        }
     }
 }
