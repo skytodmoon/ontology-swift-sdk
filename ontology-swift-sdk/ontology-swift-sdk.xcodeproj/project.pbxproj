@@ -260,7 +260,6 @@
 				D1BE93982106CA8200D1A7CB /* Frameworks */,
 				D1BE93992106CA8200D1A7CB /* Resources */,
 				6A4DD112FA50C613F2A08F88 /* [CP] Embed Pods Frameworks */,
-				5AC2421E3412F197F2182F7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,21 +318,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5AC2421E3412F197F2182F7D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ontology-swift-sdk/Pods-ontology-swift-sdk-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6A4DD112FA50C613F2A08F88 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
