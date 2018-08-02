@@ -31,6 +31,8 @@
 		D1BE93C42106CB2B00D1A7CB /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE93C02106CB2B00D1A7CB /* BinaryCodable.swift */; };
 		D1BE93C52106CB2B00D1A7CB /* BinaryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE93C12106CB2B00D1A7CB /* BinaryEncoder.swift */; };
 		D1BE93C62106CB2B00D1A7CB /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE93C22106CB2B00D1A7CB /* BinaryDecoder.swift */; };
+		D1D6E25C21129E9600B72259 /* EllipticCurveKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6E25A21129E9500B72259 /* EllipticCurveKeyPair.swift */; };
+		D1D6E25D21129E9600B72259 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6E25B21129E9500B72259 /* SHA256.swift */; };
 		D1D75C17204B9187A04F5232 /* Pods_ontology_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A841B71BA89A16B1FC505B /* Pods_ontology_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		D1BE93C02106CB2B00D1A7CB /* BinaryCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodable.swift; sourceTree = "<group>"; };
 		D1BE93C12106CB2B00D1A7CB /* BinaryEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryEncoder.swift; sourceTree = "<group>"; };
 		D1BE93C22106CB2B00D1A7CB /* BinaryDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
+		D1D6E25A21129E9500B72259 /* EllipticCurveKeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipticCurveKeyPair.swift; sourceTree = "<group>"; };
+		D1D6E25B21129E9500B72259 /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 		D183D97D210711420025EF8B /* crypto */ = {
 			isa = PBXGroup;
 			children = (
+				D1D6E25A21129E9500B72259 /* EllipticCurveKeyPair.swift */,
+				D1D6E25B21129E9500B72259 /* SHA256.swift */,
 				D183D97E2107115B0025EF8B /* KeyType.swift */,
 				D183D9852108521B0025EF8B /* SignatureScheme.swift */,
 				D183D995210C20390025EF8B /* Curve.swift */,
@@ -387,6 +393,7 @@
 				D183D97C21070D950025EF8B /* Exception.swift in Sources */,
 				D183D998210C211A0025EF8B /* CurveModel.swift in Sources */,
 				D1BE93A12106CA8200D1A7CB /* ViewController.swift in Sources */,
+				D1D6E25D21129E9600B72259 /* SHA256.swift in Sources */,
 				D1BE93B72106CB1300D1A7CB /* WebsocketClient.swift in Sources */,
 				D1BE93C42106CB2B00D1A7CB /* BinaryCodable.swift in Sources */,
 				D1BE93B82106CB1300D1A7CB /* IConnector.swift in Sources */,
@@ -395,6 +402,7 @@
 				D1BE939F2106CA8200D1A7CB /* AppDelegate.swift in Sources */,
 				D183D9712106F4FB0025EF8B /* Transaction.swift in Sources */,
 				D183D97A21070D850025EF8B /* Account.swift in Sources */,
+				D1D6E25C21129E9600B72259 /* EllipticCurveKeyPair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
