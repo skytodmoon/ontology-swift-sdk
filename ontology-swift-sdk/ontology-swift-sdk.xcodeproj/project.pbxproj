@@ -152,8 +152,7 @@
 		D183D97D210711420025EF8B /* crypto */ = {
 			isa = PBXGroup;
 			children = (
-				D1D6E25A21129E9500B72259 /* EllipticCurveKeyPair.swift */,
-				D1D6E25B21129E9500B72259 /* SHA256.swift */,
+				D1D6E26221129F7800B72259 /* cryptoLib */,
 				D183D97E2107115B0025EF8B /* KeyType.swift */,
 				D183D9852108521B0025EF8B /* SignatureScheme.swift */,
 				D183D995210C20390025EF8B /* Curve.swift */,
@@ -261,6 +260,15 @@
 				D1BE93C22106CB2B00D1A7CB /* BinaryDecoder.swift */,
 			);
 			path = binary;
+			sourceTree = "<group>";
+		};
+		D1D6E26221129F7800B72259 /* cryptoLib */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6E25A21129E9500B72259 /* EllipticCurveKeyPair.swift */,
+				D1D6E25B21129E9500B72259 /* SHA256.swift */,
+			);
+			path = cryptoLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,6 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM2W9H68VK;
 				INFOPLIST_FILE = "ontology-swift-sdk/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wm.ontology-swift-sdk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,6 +568,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM2W9H68VK;
 				INFOPLIST_FILE = "ontology-swift-sdk/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wm.ontology-swift-sdk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
