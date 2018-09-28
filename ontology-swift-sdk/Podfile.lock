@@ -1,0 +1,28 @@
+PODS:
+  - SwiftyJSON (4.1.0)
+  - UInt256 (0.2.2)
+
+DEPENDENCIES:
+  - SwiftyJSON
+  - UInt256 (from `https://github.com/hyu2018/UInt256.git`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  UInt256:
+    :git: https://github.com/hyu2018/UInt256.git
+
+CHECKOUT OPTIONS:
+  UInt256:
+    :commit: 35a379132f66717439f9b74d91060ef4dc0b0334
+    :git: https://github.com/hyu2018/UInt256.git
+
+SPEC CHECKSUMS:
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  UInt256: e88c8706e35e1e29fd5459be4dbc0488c8f7ea60
+
+PODFILE CHECKSUM: b48c91be8edce0438cb79a149e66b75038719961
+
+COCOAPODS: 1.5.0
