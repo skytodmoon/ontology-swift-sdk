@@ -1,0 +1,11 @@
+framework module EllipticCurveKit {
+  umbrella header "EllipticCurveKit.h"
+
+  export *
+  module * { export * }
+}
+
+module EllipticCurveKit.Swift {
+    header "EllipticCurveKit-Swift.h"
+    requires objc
+}
