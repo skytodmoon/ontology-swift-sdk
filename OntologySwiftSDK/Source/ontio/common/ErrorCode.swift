@@ -243,12 +243,19 @@ enum ErrorCode: Error{
         }
     }
     func getError(code: Int, msg: String) -> String {
-        let dic = ["Error": code,"Desc": msg] as [String : Any]
-        if let jsonData = try? JSONEncoder().encode(dic)  {
+        //let dic = ["Error": code,"Desc": msg] as [String : Any]
+        let errorType = ErrorType(Error:code, Desc:msg)
+        if let jsonData = try? JSONEncoder().encode(errorType)  {
             if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
                 print("----------------Base--------------------")
                 return jsonString
             }
         }
+        return""
     }
+}
+
+struct ErrorType: Codable {
+    var Error:Int
+    var Desc:String
 }

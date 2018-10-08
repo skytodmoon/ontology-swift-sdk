@@ -13,13 +13,8 @@
 		2C83E2E92162F4E4002432FB /* CurveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2C82162F4E4002432FB /* CurveModel.swift */; };
 		2C83E2EA2162F4E4002432FB /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2C92162F4E4002432FB /* Curve.swift */; };
 		2C83E2EB2162F4E4002432FB /* SignatureScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CA2162F4E4002432FB /* SignatureScheme.swift */; };
-		2C83E2EC2162F4E4002432FB /* EllipticCurveKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CC2162F4E4002432FB /* EllipticCurveKeyPair.swift */; };
 		2C83E2ED2162F4E4002432FB /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CD2162F4E4002432FB /* SHA256.swift */; };
 		2C83E2EE2162F4E4002432FB /* KeyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CE2162F4E4002432FB /* KeyType.swift */; };
-		2C83E2EF2162F4E4002432FB /* BinaryCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D12162F4E4002432FB /* BinaryCodableExtensions.swift */; };
-		2C83E2F02162F4E4002432FB /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D22162F4E4002432FB /* BinaryCodable.swift */; };
-		2C83E2F12162F4E4002432FB /* BinaryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D32162F4E4002432FB /* BinaryEncoder.swift */; };
-		2C83E2F22162F4E4002432FB /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D42162F4E4002432FB /* BinaryDecoder.swift */; };
 		2C83E2F32162F4E4002432FB /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D72162F4E4002432FB /* TransactionType.swift */; };
 		2C83E2F42162F4E4002432FB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D82162F4E4002432FB /* Transaction.swift */; };
 		2C83E2F52162F4E4002432FB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2DB2162F4E4002432FB /* Result.swift */; };
@@ -56,13 +51,8 @@
 		2C83E2C82162F4E4002432FB /* CurveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveModel.swift; sourceTree = "<group>"; };
 		2C83E2C92162F4E4002432FB /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
 		2C83E2CA2162F4E4002432FB /* SignatureScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureScheme.swift; sourceTree = "<group>"; };
-		2C83E2CC2162F4E4002432FB /* EllipticCurveKeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipticCurveKeyPair.swift; sourceTree = "<group>"; };
 		2C83E2CD2162F4E4002432FB /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		2C83E2CE2162F4E4002432FB /* KeyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyType.swift; sourceTree = "<group>"; };
-		2C83E2D12162F4E4002432FB /* BinaryCodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodableExtensions.swift; sourceTree = "<group>"; };
-		2C83E2D22162F4E4002432FB /* BinaryCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodable.swift; sourceTree = "<group>"; };
-		2C83E2D32162F4E4002432FB /* BinaryEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryEncoder.swift; sourceTree = "<group>"; };
-		2C83E2D42162F4E4002432FB /* BinaryDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
 		2C83E2D72162F4E4002432FB /* TransactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		2C83E2D82162F4E4002432FB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2C83E2DB2162F4E4002432FB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -104,7 +94,6 @@
 		2C83E29F2162F1F1002432FB = {
 			isa = PBXGroup;
 			children = (
-				2C83E2FE2162F4EF002432FB /* Product */,
 				2C83E2AB2162F1F1002432FB /* Source */,
 				2C83E2B62162F1F1002432FB /* OntologySwiftSDKTests */,
 				2C83E2AA2162F1F1002432FB /* Products */,
@@ -179,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				2C83E3012162F60A002432FB /* EllipticCurveKit.framework */,
-				2C83E2CC2162F4E4002432FB /* EllipticCurveKeyPair.swift */,
 				2C83E2CD2162F4E4002432FB /* SHA256.swift */,
 			);
 			path = cryptoLib;
@@ -188,20 +176,8 @@
 		2C83E2CF2162F4E4002432FB /* tools */ = {
 			isa = PBXGroup;
 			children = (
-				2C83E2D02162F4E4002432FB /* binary */,
 			);
 			path = tools;
-			sourceTree = "<group>";
-		};
-		2C83E2D02162F4E4002432FB /* binary */ = {
-			isa = PBXGroup;
-			children = (
-				2C83E2D12162F4E4002432FB /* BinaryCodableExtensions.swift */,
-				2C83E2D22162F4E4002432FB /* BinaryCodable.swift */,
-				2C83E2D32162F4E4002432FB /* BinaryEncoder.swift */,
-				2C83E2D42162F4E4002432FB /* BinaryDecoder.swift */,
-			);
-			path = binary;
 			sourceTree = "<group>";
 		};
 		2C83E2D52162F4E4002432FB /* core */ = {
@@ -280,13 +256,6 @@
 				2C83E2E82162F4E4002432FB /* Account.swift */,
 			);
 			path = account;
-			sourceTree = "<group>";
-		};
-		2C83E2FE2162F4EF002432FB /* Product */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Product;
 			sourceTree = "<group>";
 		};
 		8364B9C60EAB9D1111F82EC7 /* Frameworks */ = {
@@ -439,7 +408,6 @@
 			files = (
 				2C83E2E92162F4E4002432FB /* CurveModel.swift in Sources */,
 				2C83E2F52162F4E4002432FB /* Result.swift in Sources */,
-				2C83E2F22162F4E4002432FB /* BinaryDecoder.swift in Sources */,
 				2C83E2FC2162F4E4002432FB /* ConnectMgr.swift in Sources */,
 				2C83E2FA2162F4E4002432FB /* Exception.swift in Sources */,
 				2C83E2F72162F4E4002432FB /* IConnector.swift in Sources */,
@@ -447,13 +415,9 @@
 				2C83E2ED2162F4E4002432FB /* SHA256.swift in Sources */,
 				2C83E2F92162F4E4002432FB /* ErrorCode.swift in Sources */,
 				2C83E2FB2162F4E4002432FB /* Helper.swift in Sources */,
-				2C83E2EF2162F4E4002432FB /* BinaryCodableExtensions.swift in Sources */,
 				2C83E2F62162F4E4002432FB /* WebsocketClient.swift in Sources */,
-				2C83E2EC2162F4E4002432FB /* EllipticCurveKeyPair.swift in Sources */,
 				2C83E2EE2162F4E4002432FB /* KeyType.swift in Sources */,
-				2C83E2F02162F4E4002432FB /* BinaryCodable.swift in Sources */,
 				2C83E2EB2162F4E4002432FB /* SignatureScheme.swift in Sources */,
-				2C83E2F12162F4E4002432FB /* BinaryEncoder.swift in Sources */,
 				2C83E2F32162F4E4002432FB /* TransactionType.swift in Sources */,
 				2C83E2F82162F4E4002432FB /* Address.swift in Sources */,
 				2C83E2EA2162F4E4002432FB /* Curve.swift in Sources */,
@@ -607,7 +571,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 645E6EFSW4;
+				DEVELOPMENT_TEAM = YM2W9H68VK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -637,7 +601,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 645E6EFSW4;
+				DEVELOPMENT_TEAM = YM2W9H68VK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
