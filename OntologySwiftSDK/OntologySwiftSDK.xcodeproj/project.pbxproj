@@ -14,8 +14,6 @@
 		2C83E2E92162F4E4002432FB /* CurveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2C82162F4E4002432FB /* CurveModel.swift */; };
 		2C83E2EA2162F4E4002432FB /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2C92162F4E4002432FB /* Curve.swift */; };
 		2C83E2EB2162F4E4002432FB /* SignatureScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CA2162F4E4002432FB /* SignatureScheme.swift */; };
-		2C83E2EC2162F4E4002432FB /* EllipticCurveKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CC2162F4E4002432FB /* EllipticCurveKeyPair.swift */; };
-		2C83E2ED2162F4E4002432FB /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CD2162F4E4002432FB /* SHA256.swift */; };
 		2C83E2EE2162F4E4002432FB /* KeyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CE2162F4E4002432FB /* KeyType.swift */; };
 		2C83E2F32162F4E4002432FB /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D72162F4E4002432FB /* TransactionType.swift */; };
 		2C83E2F42162F4E4002432FB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D82162F4E4002432FB /* Transaction.swift */; };
@@ -53,8 +51,6 @@
 		2C83E2C82162F4E4002432FB /* CurveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveModel.swift; sourceTree = "<group>"; };
 		2C83E2C92162F4E4002432FB /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
 		2C83E2CA2162F4E4002432FB /* SignatureScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureScheme.swift; sourceTree = "<group>"; };
-		2C83E2CC2162F4E4002432FB /* EllipticCurveKeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipticCurveKeyPair.swift; sourceTree = "<group>"; };
-		2C83E2CD2162F4E4002432FB /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		2C83E2CE2162F4E4002432FB /* KeyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyType.swift; sourceTree = "<group>"; };
 		2C83E2D72162F4E4002432FB /* TransactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		2C83E2D82162F4E4002432FB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -175,8 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				2C83E3012162F60A002432FB /* EllipticCurveKit.framework */,
-				2C83E2CC2162F4E4002432FB /* EllipticCurveKeyPair.swift */,
-				2C83E2CD2162F4E4002432FB /* SHA256.swift */,
 			);
 			path = cryptoLib;
 			sourceTree = "<group>";
@@ -465,11 +459,9 @@
 				2C83E2FA2162F4E4002432FB /* Exception.swift in Sources */,
 				2C83E2F72162F4E4002432FB /* IConnector.swift in Sources */,
 				2C83E2F42162F4E4002432FB /* Transaction.swift in Sources */,
-				2C83E2ED2162F4E4002432FB /* SHA256.swift in Sources */,
 				2C83E2F92162F4E4002432FB /* ErrorCode.swift in Sources */,
 				2C83E2FB2162F4E4002432FB /* Helper.swift in Sources */,
 				2C83E2F62162F4E4002432FB /* WebsocketClient.swift in Sources */,
-				2C83E2EC2162F4E4002432FB /* EllipticCurveKeyPair.swift in Sources */,
 				2C83E2EE2162F4E4002432FB /* KeyType.swift in Sources */,
 				2C83E2EB2162F4E4002432FB /* SignatureScheme.swift in Sources */,
 				2C83E2F32162F4E4002432FB /* TransactionType.swift in Sources */,
@@ -635,7 +627,11 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/SupportingFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -661,7 +657,11 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/SupportingFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -678,7 +678,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 645E6EFSW4;
 				INFOPLIST_FILE = OntologySwiftSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -694,7 +698,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 645E6EFSW4;
 				INFOPLIST_FILE = OntologySwiftSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

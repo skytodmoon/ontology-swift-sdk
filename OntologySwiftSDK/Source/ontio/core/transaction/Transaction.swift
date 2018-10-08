@@ -13,4 +13,10 @@ public class Transaction {
 //    var gasPrice: CLong = 0
 //    var gasLimit: CLong = 0
 //    var payer: Address
+    var version: Int8 = 0
+    //var txType: TransactionType
+    var nonce: UInt32 = arc4random()
+    var gasPrice: CLong = 0
+    var gasLimit: CLong = 0
+    //var payer: Address
 }
