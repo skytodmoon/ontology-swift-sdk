@@ -22,7 +22,7 @@ public class Helper{
             let tempStr = hexStr[range]
             result[i] = UInt8(hexStringToInt(from: tempStr))
         }
-        
+        return [0000]
         
     }
     

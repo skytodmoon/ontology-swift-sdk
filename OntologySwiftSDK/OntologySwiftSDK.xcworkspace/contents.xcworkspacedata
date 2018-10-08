@@ -5,6 +5,9 @@
       location = "group:OntologySwiftSDK.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ExampleIOS/ExampleIOS.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

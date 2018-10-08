@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B602FF7522B80BF2A64F162 /* Pods_OntologySwiftSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */; };
 		2C83E2B32162F1F1002432FB /* OntologySwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C83E2A92162F1F1002432FB /* OntologySwiftSDK.framework */; };
 		2C83E2B82162F1F1002432FB /* OntologySwiftSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2B72162F1F1002432FB /* OntologySwiftSDKTests.swift */; };
 		2C83E2BA2162F1F1002432FB /* OntologySwiftSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C83E2AC2162F1F1002432FB /* OntologySwiftSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,10 +17,6 @@
 		2C83E2EC2162F4E4002432FB /* EllipticCurveKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CC2162F4E4002432FB /* EllipticCurveKeyPair.swift */; };
 		2C83E2ED2162F4E4002432FB /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CD2162F4E4002432FB /* SHA256.swift */; };
 		2C83E2EE2162F4E4002432FB /* KeyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2CE2162F4E4002432FB /* KeyType.swift */; };
-		2C83E2EF2162F4E4002432FB /* BinaryCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D12162F4E4002432FB /* BinaryCodableExtensions.swift */; };
-		2C83E2F02162F4E4002432FB /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D22162F4E4002432FB /* BinaryCodable.swift */; };
-		2C83E2F12162F4E4002432FB /* BinaryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D32162F4E4002432FB /* BinaryEncoder.swift */; };
-		2C83E2F22162F4E4002432FB /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D42162F4E4002432FB /* BinaryDecoder.swift */; };
 		2C83E2F32162F4E4002432FB /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D72162F4E4002432FB /* TransactionType.swift */; };
 		2C83E2F42162F4E4002432FB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2D82162F4E4002432FB /* Transaction.swift */; };
 		2C83E2F52162F4E4002432FB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2DB2162F4E4002432FB /* Result.swift */; };
@@ -59,10 +56,6 @@
 		2C83E2CC2162F4E4002432FB /* EllipticCurveKeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipticCurveKeyPair.swift; sourceTree = "<group>"; };
 		2C83E2CD2162F4E4002432FB /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		2C83E2CE2162F4E4002432FB /* KeyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyType.swift; sourceTree = "<group>"; };
-		2C83E2D12162F4E4002432FB /* BinaryCodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodableExtensions.swift; sourceTree = "<group>"; };
-		2C83E2D22162F4E4002432FB /* BinaryCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodable.swift; sourceTree = "<group>"; };
-		2C83E2D32162F4E4002432FB /* BinaryEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryEncoder.swift; sourceTree = "<group>"; };
-		2C83E2D42162F4E4002432FB /* BinaryDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
 		2C83E2D72162F4E4002432FB /* TransactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		2C83E2D82162F4E4002432FB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2C83E2DB2162F4E4002432FB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -77,7 +70,10 @@
 		2C83E2FF2162F5DE002432FB /* EllipticCurveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EllipticCurveKit.framework; path = ../../Desktop/EllipticCurveKit.framework; sourceTree = "<group>"; };
 		2C83E3012162F60A002432FB /* EllipticCurveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EllipticCurveKit.framework; sourceTree = "<group>"; };
 		758D5C0BDA76230117701FA9 /* Pods-OntologySwiftSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDK/Pods-OntologySwiftSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		87E4CA18D8F17CA503EB73AB /* Pods-OntologySwiftSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		90686B85DB2CF05865CE48A9 /* Pods-OntologySwiftSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDK/Pods-OntologySwiftSDK.release.xcconfig"; sourceTree = "<group>"; };
+		D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OntologySwiftSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E09413611F8C202834359A3C /* Pods-OntologySwiftSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C83E2B32162F1F1002432FB /* OntologySwiftSDK.framework in Frameworks */,
+				1B602FF7522B80BF2A64F162 /* Pods_OntologySwiftSDKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,10 +101,9 @@
 		2C83E29F2162F1F1002432FB = {
 			isa = PBXGroup;
 			children = (
-				2C83E2FE2162F4EF002432FB /* Product */,
+				2C83E2AA2162F1F1002432FB /* Products */,
 				2C83E2AB2162F1F1002432FB /* Source */,
 				2C83E2B62162F1F1002432FB /* OntologySwiftSDKTests */,
-				2C83E2AA2162F1F1002432FB /* Products */,
 				CB4FD3BD76810A1D4C86425A /* Pods */,
 				8364B9C60EAB9D1111F82EC7 /* Frameworks */,
 			);
@@ -188,20 +184,8 @@
 		2C83E2CF2162F4E4002432FB /* tools */ = {
 			isa = PBXGroup;
 			children = (
-				2C83E2D02162F4E4002432FB /* binary */,
 			);
 			path = tools;
-			sourceTree = "<group>";
-		};
-		2C83E2D02162F4E4002432FB /* binary */ = {
-			isa = PBXGroup;
-			children = (
-				2C83E2D12162F4E4002432FB /* BinaryCodableExtensions.swift */,
-				2C83E2D22162F4E4002432FB /* BinaryCodable.swift */,
-				2C83E2D32162F4E4002432FB /* BinaryEncoder.swift */,
-				2C83E2D42162F4E4002432FB /* BinaryDecoder.swift */,
-			);
-			path = binary;
 			sourceTree = "<group>";
 		};
 		2C83E2D52162F4E4002432FB /* core */ = {
@@ -282,18 +266,12 @@
 			path = account;
 			sourceTree = "<group>";
 		};
-		2C83E2FE2162F4EF002432FB /* Product */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Product;
-			sourceTree = "<group>";
-		};
 		8364B9C60EAB9D1111F82EC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2C83E2FF2162F5DE002432FB /* EllipticCurveKit.framework */,
 				1F4A4EA85F7074CA180190D3 /* Pods_OntologySwiftSDK.framework */,
+				D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -303,6 +281,8 @@
 			children = (
 				758D5C0BDA76230117701FA9 /* Pods-OntologySwiftSDK.debug.xcconfig */,
 				90686B85DB2CF05865CE48A9 /* Pods-OntologySwiftSDK.release.xcconfig */,
+				E09413611F8C202834359A3C /* Pods-OntologySwiftSDKTests.debug.xcconfig */,
+				87E4CA18D8F17CA503EB73AB /* Pods-OntologySwiftSDKTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -344,9 +324,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C83E2C02162F1F1002432FB /* Build configuration list for PBXNativeTarget "OntologySwiftSDKTests" */;
 			buildPhases = (
+				650A9EAFB8173396B48E1F98 /* [CP] Check Pods Manifest.lock */,
 				2C83E2AE2162F1F1002432FB /* Sources */,
 				2C83E2AF2162F1F1002432FB /* Frameworks */,
 				2C83E2B02162F1F1002432FB /* Resources */,
+				6C60D239B364D1AFD472AD3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,6 +394,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		650A9EAFB8173396B48E1F98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OntologySwiftSDKTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C60D239B364D1AFD472AD3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8E0DA6C3C1707594ABD97371 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,7 +461,6 @@
 			files = (
 				2C83E2E92162F4E4002432FB /* CurveModel.swift in Sources */,
 				2C83E2F52162F4E4002432FB /* Result.swift in Sources */,
-				2C83E2F22162F4E4002432FB /* BinaryDecoder.swift in Sources */,
 				2C83E2FC2162F4E4002432FB /* ConnectMgr.swift in Sources */,
 				2C83E2FA2162F4E4002432FB /* Exception.swift in Sources */,
 				2C83E2F72162F4E4002432FB /* IConnector.swift in Sources */,
@@ -447,13 +468,10 @@
 				2C83E2ED2162F4E4002432FB /* SHA256.swift in Sources */,
 				2C83E2F92162F4E4002432FB /* ErrorCode.swift in Sources */,
 				2C83E2FB2162F4E4002432FB /* Helper.swift in Sources */,
-				2C83E2EF2162F4E4002432FB /* BinaryCodableExtensions.swift in Sources */,
 				2C83E2F62162F4E4002432FB /* WebsocketClient.swift in Sources */,
 				2C83E2EC2162F4E4002432FB /* EllipticCurveKeyPair.swift in Sources */,
 				2C83E2EE2162F4E4002432FB /* KeyType.swift in Sources */,
-				2C83E2F02162F4E4002432FB /* BinaryCodable.swift in Sources */,
 				2C83E2EB2162F4E4002432FB /* SignatureScheme.swift in Sources */,
-				2C83E2F12162F4E4002432FB /* BinaryEncoder.swift in Sources */,
 				2C83E2F32162F4E4002432FB /* TransactionType.swift in Sources */,
 				2C83E2F82162F4E4002432FB /* Address.swift in Sources */,
 				2C83E2EA2162F4E4002432FB /* Curve.swift in Sources */,
@@ -617,11 +635,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/SupportingFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -647,11 +661,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/SupportingFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -662,16 +672,13 @@
 		};
 		2C83E2C12162F1F1002432FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E09413611F8C202834359A3C /* Pods-OntologySwiftSDKTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 645E6EFSW4;
 				INFOPLIST_FILE = OntologySwiftSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -681,16 +688,13 @@
 		};
 		2C83E2C22162F1F1002432FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87E4CA18D8F17CA503EB73AB /* Pods-OntologySwiftSDKTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 645E6EFSW4;
 				INFOPLIST_FILE = OntologySwiftSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -7,10 +7,10 @@
 //
 
 public class Transaction {
-    var version: Int8 = 0
-    var txType: TransactionType
-    var nonce: Int = arc4random()
-    var gasPrice: CLong = 0
-    var gasLimit: CLong = 0
-    var payer: Address
+//    var version: Int8 = 0
+//    var txType: TransactionType
+//    var nonce: Int = arc4random()
+//    var gasPrice: CLong = 0
+//    var gasLimit: CLong = 0
+//    var payer: Address
 }

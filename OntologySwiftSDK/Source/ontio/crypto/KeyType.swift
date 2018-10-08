@@ -32,6 +32,7 @@ enum KeyType: UInt8{
         }catch ErrorCode.InvalidParams{
             print(ErrorCode.InvalidParams.withErrorStr(message: ""))
         }
+        return KeyType.ECDSA
     }
 }
 

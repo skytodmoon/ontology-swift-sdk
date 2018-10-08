@@ -244,11 +244,12 @@ enum ErrorCode: Error{
     }
     func getError(code: Int, msg: String) -> String {
         let dic = ["Error": code,"Desc": msg] as [String : Any]
-        if let jsonData = try? JSONEncoder().encode(dic)  {
-            if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
-                print("----------------Base--------------------")
-                return jsonString
-            }
-        }
+//        if let jsonData = try? JSONEncoder().encode(dic)  {
+//            if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
+//                print("----------------Base--------------------")
+//                return jsonString
+//            }
+//        }
+        return ""
     }
 }

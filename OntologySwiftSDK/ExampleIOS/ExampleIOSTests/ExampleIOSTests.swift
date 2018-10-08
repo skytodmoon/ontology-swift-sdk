@@ -1,6 +1,6 @@
 //
-//  OntologySwiftSDKTests.swift
-//  OntologySwiftSDKTests
+//  ExampleIOSTests.swift
+//  ExampleIOSTests
 //
 //  Created by 孙琦 on 2018/10/2.
 //  Copyright © 2018年 孙琦. All rights reserved.
@@ -8,9 +8,9 @@
 
 import XCTest
 import EllipticCurveKit
-@testable import OntologySwiftSDK
+@testable import ExampleIOS
 
-class OntologySwiftSDKTests: XCTestCase {
+class ExampleIOSTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,8 +23,19 @@ class OntologySwiftSDKTests: XCTestCase {
     }
     
     func testExample() {
-        print("sdasda")
         // This is an example of a functional test case.
+        DispatchQueue.global(qos: .userInitiated).async {
+            let begin = clock()
+            let gen = AnyKeyGenerator<Secp256k1>.generateNewKeyPair()
+            print(gen.publicKey)
+            print(gen.privateKey)
+            let diff = Double(clock() - begin) / Double(CLOCKS_PER_SEC)
+            DispatchQueue.main.async {
+                let text = "SECP256K1: \(diff)s"
+                print("Success! \(text)")
+            }
+        }
+        print("(multiplication running in background)")
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
@@ -32,6 +43,7 @@ class OntologySwiftSDKTests: XCTestCase {
         // This is an example of a performance test case.
         self.measure {
             let gen = AnyKeyGenerator<Secp256k1>.generateNewKeyPair()
+            print(gen.publicKey)
             print(gen.privateKey)
             // Put the code you want to measure the time of here.
         }
