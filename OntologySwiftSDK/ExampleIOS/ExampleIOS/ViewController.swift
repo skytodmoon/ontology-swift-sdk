@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import EllipticCurveKit
+//import EllipticCurveKit
 
 class ViewController: UIViewController {
 

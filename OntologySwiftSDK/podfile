@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '11.0'
 use_frameworks!
 
 #target 'OntologySwiftSDK' do
@@ -16,8 +16,9 @@ workspace 'OntologySwiftSDK'
 
 def pods()
     #pod 'SwiftyJSON'
-    pod 'BigInt'
-    pod 'CryptoSwift'
+    #pod 'BigInt'
+    #pod 'CryptoSwift'
+    pod 'EllipticCurveKit', '~> 0.0.1'
 end
 
 target 'OntologySwiftSDK' do

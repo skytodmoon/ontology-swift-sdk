@@ -31,7 +31,7 @@ class OntologySwiftSDKTests: XCTestCase {
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            let gen = AnyKeyGenerator<Secp256k1>.generateNewKeyPair()
+            let gen = AnyKeyGenerator<Secp256r1>.generateNewKeyPair()
             print(gen.privateKey)
             // Put the code you want to measure the time of here.
         }

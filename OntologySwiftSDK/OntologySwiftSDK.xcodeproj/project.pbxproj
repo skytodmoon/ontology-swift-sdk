@@ -26,7 +26,6 @@
 		2C83E2FB2162F4E4002432FB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2E32162F4E4002432FB /* Helper.swift */; };
 		2C83E2FC2162F4E4002432FB /* ConnectMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2E62162F4E4002432FB /* ConnectMgr.swift */; };
 		2C83E2FD2162F4E4002432FB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2E82162F4E4002432FB /* Account.swift */; };
-		2C83E3022162F60A002432FB /* EllipticCurveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C83E3012162F60A002432FB /* EllipticCurveKit.framework */; };
 		A9EC508168EB31CC510EBEA4 /* Pods_OntologySwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4A4EA85F7074CA180190D3 /* Pods_OntologySwiftSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +62,6 @@
 		2C83E2E32162F4E4002432FB /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		2C83E2E62162F4E4002432FB /* ConnectMgr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectMgr.swift; sourceTree = "<group>"; };
 		2C83E2E82162F4E4002432FB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		2C83E2FF2162F5DE002432FB /* EllipticCurveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EllipticCurveKit.framework; path = ../../Desktop/EllipticCurveKit.framework; sourceTree = "<group>"; };
-		2C83E3012162F60A002432FB /* EllipticCurveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EllipticCurveKit.framework; sourceTree = "<group>"; };
 		758D5C0BDA76230117701FA9 /* Pods-OntologySwiftSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDK/Pods-OntologySwiftSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		87E4CA18D8F17CA503EB73AB /* Pods-OntologySwiftSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		90686B85DB2CF05865CE48A9 /* Pods-OntologySwiftSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDK/Pods-OntologySwiftSDK.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9EC508168EB31CC510EBEA4 /* Pods_OntologySwiftSDK.framework in Frameworks */,
-				2C83E3022162F60A002432FB /* EllipticCurveKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,21 +154,12 @@
 		2C83E2C72162F4E4002432FB /* crypto */ = {
 			isa = PBXGroup;
 			children = (
-				2C83E2CB2162F4E4002432FB /* cryptoLib */,
 				2C83E2C82162F4E4002432FB /* CurveModel.swift */,
 				2C83E2C92162F4E4002432FB /* Curve.swift */,
 				2C83E2CA2162F4E4002432FB /* SignatureScheme.swift */,
 				2C83E2CE2162F4E4002432FB /* KeyType.swift */,
 			);
 			path = crypto;
-			sourceTree = "<group>";
-		};
-		2C83E2CB2162F4E4002432FB /* cryptoLib */ = {
-			isa = PBXGroup;
-			children = (
-				2C83E3012162F60A002432FB /* EllipticCurveKit.framework */,
-			);
-			path = cryptoLib;
 			sourceTree = "<group>";
 		};
 		2C83E2CF2162F4E4002432FB /* tools */ = {
@@ -263,7 +250,6 @@
 		8364B9C60EAB9D1111F82EC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2C83E2FF2162F5DE002432FB /* EllipticCurveKit.framework */,
 				1F4A4EA85F7074CA180190D3 /* Pods_OntologySwiftSDK.framework */,
 				D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */,
 			);
@@ -322,7 +308,7 @@
 				2C83E2AE2162F1F1002432FB /* Sources */,
 				2C83E2AF2162F1F1002432FB /* Frameworks */,
 				2C83E2B02162F1F1002432FB /* Resources */,
-				6C60D239B364D1AFD472AD3A /* [CP] Embed Pods Frameworks */,
+				1FB84D17AC79D4C2C31D0805 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,6 +335,7 @@
 					};
 					2C83E2B12162F1F1002432FB = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -388,6 +375,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1FB84D17AC79D4C2C31D0805 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/EllipticCurveKit/EllipticCurveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EllipticCurveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		650A9EAFB8173396B48E1F98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,28 +415,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6C60D239B364D1AFD472AD3A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8E0DA6C3C1707594ABD97371 /* [CP] Check Pods Manifest.lock */ = {
@@ -617,7 +606,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 645E6EFSW4;
+				DEVELOPMENT_TEAM = YM2W9H68VK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -635,7 +624,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -647,7 +636,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 645E6EFSW4;
+				DEVELOPMENT_TEAM = YM2W9H68VK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -665,7 +654,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -685,7 +674,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -705,7 +694,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
