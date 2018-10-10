@@ -27,6 +27,7 @@
 		2C83E2FC2162F4E4002432FB /* ConnectMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2E62162F4E4002432FB /* ConnectMgr.swift */; };
 		2C83E2FD2162F4E4002432FB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2E82162F4E4002432FB /* Account.swift */; };
 		A9EC508168EB31CC510EBEA4 /* Pods_OntologySwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4A4EA85F7074CA180190D3 /* Pods_OntologySwiftSDK.framework */; };
+		D1164BB8216DF3C400B7E922 /* Ont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1164BB7216DF3C400B7E922 /* Ont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		758D5C0BDA76230117701FA9 /* Pods-OntologySwiftSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDK/Pods-OntologySwiftSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		87E4CA18D8F17CA503EB73AB /* Pods-OntologySwiftSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		90686B85DB2CF05865CE48A9 /* Pods-OntologySwiftSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDK/Pods-OntologySwiftSDK.release.xcconfig"; sourceTree = "<group>"; };
+		D1164BB7216DF3C400B7E922 /* Ont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ont.swift; sourceTree = "<group>"; };
 		D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OntologySwiftSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09413611F8C202834359A3C /* Pods-OntologySwiftSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 				2C83E2C92162F4E4002432FB /* Curve.swift */,
 				2C83E2CA2162F4E4002432FB /* SignatureScheme.swift */,
 				2C83E2CE2162F4E4002432FB /* KeyType.swift */,
+				D1164BB7216DF3C400B7E922 /* Ont.swift */,
 			);
 			path = crypto;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				2C83E2FC2162F4E4002432FB /* ConnectMgr.swift in Sources */,
 				2C83E2FA2162F4E4002432FB /* Exception.swift in Sources */,
 				2C83E2F72162F4E4002432FB /* IConnector.swift in Sources */,
+				D1164BB8216DF3C400B7E922 /* Ont.swift in Sources */,
 				2C83E2F42162F4E4002432FB /* Transaction.swift in Sources */,
 				2C83E2F92162F4E4002432FB /* ErrorCode.swift in Sources */,
 				2C83E2FB2162F4E4002432FB /* Helper.swift in Sources */,
