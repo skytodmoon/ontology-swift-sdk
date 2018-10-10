@@ -15,17 +15,21 @@ public typealias Signature = EllipticCurveKit.Signature<Curve>
 public typealias Signer = EllipticCurveKit.AnyKeySigner<Schnorr<Curve>>
 public typealias Network = EllipticCurveKit.Zilliqa.Network
 
+public extension Network {
+    static var `default`: Network {
+        return .mainnet
+    }
+}
 
 public struct Account {
     public let keyPair: KeyPair
     public let address: Address
     public let network: Network
     
-    public init() throws {
-        self.keyPair = AnyKeyGenerator<Curve>.generateNewKeyPair()
-//        guard let wallet = Wallet.init(keyPair: (keyPair)self.keyPair , system: Ont) else {
-//            throw ErrorCode.GetAccountByAddressErr
-//        }
+    public init(keyPair: KeyPair, network: Network = .default){
+        self.keyPair = keyPair
+        self.address = Address(keyPair: keyPair, network: network)
+        self.network = network
     }
 //    fileprivate var keyType: KeyType?
 //    fileprivate var curveParams:[Any]?

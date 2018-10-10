@@ -25,34 +25,7 @@
 			remoteGlobalIDString = 2C83E33021630788002432FB;
 			remoteInfo = ExampleIOS;
 		};
-		D1164B9C216DB72900B7E922 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D1164B97216DB72900B7E922 /* OntologySwiftSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2C83E2A92162F1F1002432FB;
-			remoteInfo = OntologySwiftSDK;
-		};
-		D1164B9E216DB72900B7E922 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D1164B97216DB72900B7E922 /* OntologySwiftSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2C83E2B22162F1F1002432FB;
-			remoteInfo = OntologySwiftSDKTests;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D1164BAC216DC4C500B7E922 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1553CF44D133CFC270CC1D25 /* Pods-ExampleIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleIOSTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ExampleIOSTests/Pods-ExampleIOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,7 +44,6 @@
 		4EC51F47A0AF8AD9BA4E0C4F /* Pods-ExampleIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleIOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ExampleIOS/Pods-ExampleIOS.release.xcconfig"; sourceTree = "<group>"; };
 		710760EE291DEF6B360DD123 /* Pods_ExampleIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B861457D77DBD21B76FDD46 /* Pods-ExampleIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleIOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ExampleIOS/Pods-ExampleIOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D1164B97216DB72900B7E922 /* OntologySwiftSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OntologySwiftSDK.xcodeproj; path = ../OntologySwiftSDK.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +69,6 @@
 		2C83E32821630788002432FB = {
 			isa = PBXGroup;
 			children = (
-				D1164B97216DB72900B7E922 /* OntologySwiftSDK.xcodeproj */,
 				2C83E33321630788002432FB /* ExampleIOS */,
 				2C83E34821630789002432FB /* ExampleIOSTests */,
 				2C83E33221630788002432FB /* Products */,
@@ -146,15 +117,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D1164B98216DB72900B7E922 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D1164B9D216DB72900B7E922 /* OntologySwiftSDK.framework */,
-				D1164B9F216DB72900B7E922 /* OntologySwiftSDKTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		E7E98B0D8A35AB155AAB1F0A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +139,6 @@
 				2C83E32D21630788002432FB /* Sources */,
 				2C83E32E21630788002432FB /* Frameworks */,
 				2C83E32F21630788002432FB /* Resources */,
-				D1164BAC216DC4C500B7E922 /* Embed Frameworks */,
 				A8718B98FE80BC9E2C65266B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -239,12 +200,6 @@
 			mainGroup = 2C83E32821630788002432FB;
 			productRefGroup = 2C83E33221630788002432FB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D1164B98216DB72900B7E922 /* Products */;
-					ProjectRef = D1164B97216DB72900B7E922 /* OntologySwiftSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				2C83E33021630788002432FB /* ExampleIOS */,
@@ -252,23 +207,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D1164B9D216DB72900B7E922 /* OntologySwiftSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OntologySwiftSDK.framework;
-			remoteRef = D1164B9C216DB72900B7E922 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D1164B9F216DB72900B7E922 /* OntologySwiftSDKTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OntologySwiftSDKTests.xctest;
-			remoteRef = D1164B9E216DB72900B7E922 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2C83E32F21630788002432FB /* Resources */ = {
@@ -333,7 +271,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-ExampleIOS/Pods-ExampleIOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ExampleIOS/Pods-ExampleIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/EllipticCurveKit/EllipticCurveKit.framework",
@@ -348,7 +286,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ExampleIOS/Pods-ExampleIOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExampleIOS/Pods-ExampleIOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

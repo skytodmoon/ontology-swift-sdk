@@ -27,7 +27,7 @@ public extension Ont {
     typealias Curve = Secp256r1
     
     func addressHash(of data: Data) -> Data{
-        let hash = Crypto.sha2Sha256(data)
+        let hash = Crypto.sha2Sha256_ripemd160(data)
         return hash.suffix(20)
     }
 }
