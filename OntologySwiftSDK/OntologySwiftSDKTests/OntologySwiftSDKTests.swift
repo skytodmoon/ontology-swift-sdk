@@ -23,7 +23,12 @@ class OntologySwiftSDKTests: XCTestCase {
     }
     
     func testExample() {
-
+        let gen = AnyKeyGenerator<Secp256r1>.generateNewKeyPair()
+        print(gen.publicKey)
+        print(gen.privateKey)
+        
+        let address = Address(keyPair: gen, network: .default)
+        print(address.checksummedHex)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

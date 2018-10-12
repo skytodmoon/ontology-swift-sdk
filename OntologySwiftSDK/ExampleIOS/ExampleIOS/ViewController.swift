@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         print(gen.privateKey)
         
         let address = Address(keyPair: gen, network: .default)
-        print(address.checksummedHex)
+        print(address)
             //Address(hexString: "9CA91EB535FB92FDA5094110FDAEB752EDB9B039")
 
         // Do any additional setup after loading the view, typically from a nib.

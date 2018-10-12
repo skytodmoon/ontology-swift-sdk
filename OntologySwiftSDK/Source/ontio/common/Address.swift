@@ -14,15 +14,16 @@ import CryptoSwift
 import EllipticCurveKit
 
 public struct Address {
-    public static let lengthOfValidAddresses: Int = 40
+    public static let lengthOfValidAddresses: Int = 100
     
     /// The compressed hashed data as a hexadecimal string
     /// which checksum has been confirmed to be correct.
     public let checksummedHex: HexString
     
     public init(hexString: HexString) throws {
-        try Address.validateAddress(hexString: hexString)
-        self.checksummedHex = Address.checksum(address: hexString)
+//        try Address.validateAddress(hexString: hexString)
+//        self.checksummedHex = Address.checksum(address: hexString)
+        self.checksummedHex = hexString
     }
 }
 
@@ -36,8 +37,8 @@ public extension Address {
         try self.init(hexString: uncompressedHash.toHexString())
     }
     
-    init(hash: Data) throws {
-        try self.init(hexString: hash.toHexString())
+    init(data: Data) throws {
+        try self.init(hexString: Base58.encode(data))
     }
     
     init?(uncheckedString: String) {
@@ -51,9 +52,9 @@ public extension Address {
     init(publicKey: PublicKey, network: Network) {
         let system = Ont(network)
         //let compressedHash = system.compressedHash(from: publicKey)
-        let hash = system.uncompressedHash(from: publicKey)
+        let hash = system.compressedHash(from: publicKey)
         do {
-            try self.init(hash: hash)
+            try self.init(data: hash)
         } catch {
             fatalError("Incorrect implementation, using `publicKey:network` initializer should never result in error: `\(error)`")
         }
@@ -71,66 +72,80 @@ public extension Address {
         case containsInvalidCharacters
     }
     
-    static func checksum(address hex: HexString) -> String {
-        let hash = EllipticCurveKit.Crypto.hash(Data(hex: hex), function: HashFunction.sha256).asHex
-        let address = hex.lowercased().droppingLeading0x()
-        var checksummed = ""
-        for (i, character) in address.enumerated() {
-            let index = String.Index(encodedOffset: i)
-            let string = String(character)
-            let integer = Int(String(hash[index]), radix: 16)!
-            if integer >= 8 {
-                checksummed += string.uppercased()
-            } else {
-                checksummed += string
-            }
-        }
-        return checksummed
-    }
+//    static func checksum(address hex: HexString) -> String {
+//        let hash = EllipticCurveKit.Crypto.hash(Data(hex: hex), function: HashFunction.sha256).asHex
+//        let address = hex.lowercased().droppingLeading0x()
+//        var checksummed = ""
+//        for (i, character) in address.enumerated() {
+//            let index = String.Index(encodedOffset: i)
+//            let string = String(character)
+//            let integer = Int(String(hash[index]), radix: 16)!
+//            if integer >= 8 {
+//                checksummed += string.uppercased()
+//            } else {
+//                checksummed += string
+//            }
+//        }
+//        return checksummed
+//    }
+//
+//    static func isAddressChecksummed(_ address: HexString) -> Bool {
+//        guard
+//            address.isAddress,
+//            case let checksummed = checksum(address: address),
+//            checksummed == address || checksummed == address.droppingLeading0x()
+//            else { return false }
+//        return true
+//    }
+//
+//    static func isValidAddress(hexString: HexString) -> Bool {
+//        do {
+//            try validateAddress(hexString: hexString)
+//            return true
+//        } catch {
+//            return false
+//        }
+//    }
+//    static func validateAddress(hexString: HexString) throws {
+//        let hex = hexString.droppingLeading0x()
+//        if hex.count < lengthOfValidAddresses {
+//            throw Error.tooShort
+//        }
+//        if hex.count > lengthOfValidAddresses {
+//            throw Error.tooLong
+//        }
+//        if Number(hexString: hex) == nil {
+//            throw Error.containsInvalidCharacters
+//        }
+//        // is valid
+//    }
     
-    static func isAddressChecksummed(_ address: HexString) -> Bool {
-        guard
-            address.isAddress,
-            case let checksummed = checksum(address: address),
-            checksummed == address || checksummed == address.droppingLeading0x()
-            else { return false }
-        return true
+    static func base58checkWithData(data: Data) -> Data{
+        let addressData = data + Crypto.sha2Sha256(data).subdata(in: 0...3)
+        let baseDataStr = Base58.encode(addressData)
+        let baseData =  Base58.decode(baseDataStr)
+        return baseData
     }
-    
-    static func isValidAddress(hexString: HexString) -> Bool {
-        do {
-            try validateAddress(hexString: hexString)
-            return true
-        } catch {
-            return false
-        }
-    }
-    static func validateAddress(hexString: HexString) throws {
-        let hex = hexString.droppingLeading0x()
-        if hex.count < lengthOfValidAddresses {
-            throw Error.tooShort
-        }
-        if hex.count > lengthOfValidAddresses {
-            throw Error.tooLong
-        }
-        if Number(hexString: hex) == nil {
-            throw Error.containsInvalidCharacters
-        }
-        // is valid
+}
+extension Data
+{
+    public func subdata(in range: CountableClosedRange<Data.Index>) -> Data
+    {
+        return self.subdata(in: range.lowerBound..<range.upperBound + 1)
     }
 }
 
 extension HexString {
-    func droppingLeading0x() -> HexString {
-        var string = self
-        while string.starts(with: "0x") {
-            string = String(string.dropFirst(2))
-        }
-        return string
-    }
-    
-    var isAddress: Bool {
-        return Address.isValidAddress(hexString: self)
-    }
+//    func droppingLeading0x() -> HexString {
+//        var string = self
+//        while string.starts(with: "0x") {
+//            string = String(string.dropFirst(2))
+//        }
+//        return string
+//    }
+//    
+//    var isAddress: Bool {
+//        return Address.isValidAddress(hexString: self)
+//    }
 }
 
