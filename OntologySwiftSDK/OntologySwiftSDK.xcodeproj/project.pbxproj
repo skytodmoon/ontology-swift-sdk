@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1B602FF7522B80BF2A64F162 /* Pods_OntologySwiftSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */; };
+		2C20E59A2178B9E600DD851B /* StaticTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20E5992178B9E600DD851B /* StaticTools.swift */; };
+		2C20E59F2178C40800DD851B /* NSMutableData+Extend.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C20E59D2178C40800DD851B /* NSMutableData+Extend.h */; };
+		2C20E5A02178C40800DD851B /* NSMutableData+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C20E59E2178C40800DD851B /* NSMutableData+Extend.m */; };
 		2C83E2B32162F1F1002432FB /* OntologySwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C83E2A92162F1F1002432FB /* OntologySwiftSDK.framework */; };
 		2C83E2B82162F1F1002432FB /* OntologySwiftSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2B72162F1F1002432FB /* OntologySwiftSDKTests.swift */; };
 		2C83E2BA2162F1F1002432FB /* OntologySwiftSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C83E2AC2162F1F1002432FB /* OntologySwiftSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		1F4A4EA85F7074CA180190D3 /* Pods_OntologySwiftSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OntologySwiftSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C20E5992178B9E600DD851B /* StaticTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTools.swift; sourceTree = "<group>"; };
+		2C20E59D2178C40800DD851B /* NSMutableData+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableData+Extend.h"; sourceTree = "<group>"; };
+		2C20E59E2178C40800DD851B /* NSMutableData+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableData+Extend.m"; sourceTree = "<group>"; };
 		2C83E2A92162F1F1002432FB /* OntologySwiftSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OntologySwiftSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C83E2AC2162F1F1002432FB /* OntologySwiftSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OntologySwiftSDK.h; sourceTree = "<group>"; };
 		2C83E2AD2162F1F1002432FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 		2C83E2CF2162F4E4002432FB /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				2C20E59D2178C40800DD851B /* NSMutableData+Extend.h */,
+				2C20E59E2178C40800DD851B /* NSMutableData+Extend.m */,
+				2C20E5992178B9E600DD851B /* StaticTools.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -277,6 +286,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C20E59F2178C40800DD851B /* NSMutableData+Extend.h in Headers */,
 				2C83E2BA2162F1F1002432FB /* OntologySwiftSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +344,7 @@
 				TargetAttributes = {
 					2C83E2A82162F1F1002432FB = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					2C83E2B12162F1F1002432FB = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -427,11 +438,13 @@
 				2C83E2F72162F4E4002432FB /* IConnector.swift in Sources */,
 				D1164BB8216DF3C400B7E922 /* Ont.swift in Sources */,
 				2C83E2F42162F4E4002432FB /* Transaction.swift in Sources */,
+				2C20E59A2178B9E600DD851B /* StaticTools.swift in Sources */,
 				2C83E2F92162F4E4002432FB /* ErrorCode.swift in Sources */,
 				2C83E2FB2162F4E4002432FB /* Helper.swift in Sources */,
 				2C83E2F62162F4E4002432FB /* WebsocketClient.swift in Sources */,
 				2C83E2EE2162F4E4002432FB /* KeyType.swift in Sources */,
 				2C83E2EB2162F4E4002432FB /* SignatureScheme.swift in Sources */,
+				2C20E5A02178C40800DD851B /* NSMutableData+Extend.m in Sources */,
 				2C83E2F32162F4E4002432FB /* TransactionType.swift in Sources */,
 				2C83E2F82162F4E4002432FB /* Address.swift in Sources */,
 				2C83E2EA2162F4E4002432FB /* Curve.swift in Sources */,
@@ -582,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 758D5C0BDA76230117701FA9 /* Pods-OntologySwiftSDK.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -600,6 +614,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -609,6 +625,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90686B85DB2CF05865CE48A9 /* Pods-OntologySwiftSDK.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -627,6 +644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.futuremake.OntologySwiftSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

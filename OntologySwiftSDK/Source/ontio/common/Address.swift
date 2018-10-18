@@ -13,8 +13,11 @@ import Foundation
 import CryptoSwift
 import EllipticCurveKit
 
+
+
+
 public struct Address {
-    public static let lengthOfValidAddresses: Int = 100
+    public static let lengthOfValidAddresses: Int = 34
     
     /// The compressed hashed data as a hexadecimal string
     /// which checksum has been confirmed to be correct.
@@ -94,8 +97,14 @@ public extension Address {
         return baseDataStr
     }
     
-    static func base58checkToData(addressStr: String) -> Data {
+    static func base58checkToData(addressStr: String) -> Data? {
+        let data:Data = Base58.decode(addressStr)
+        guard data.count > 4 else {
+            return nil
+        }
         
+        //let checkData = CFDataCreate(SecureAllocator(), data.bytes, data.count-4)
+
 //        NSData *d = self.base58ToData;
 //
 //        if (d.length < 4) return nil;
@@ -106,11 +115,12 @@ public extension Address {
 //        NSData *datachecksum1 = [[data SHA256_2] subdataWithRange:NSMakeRange(0, 4)];
 //        NSData *datachecksum2 = [d subdataWithRange:NSMakeRange(d.length - 4, 4)];
 //        if (![datachecksum1 isEqual:datachecksum2]) return nil;
-//        return data;
+        return data
     }
     
     static func hash160ToData(uncheckStr: String) -> Data {
-        //let data = base58checkWithData(data: <#T##Data#>)
+        let data = base58checkToData(addressStr: uncheckStr)
+        
         //let data = base
         //        unsigned char COIN_VERSION = 0x17;
         //        unsigned char data_coin_version;
@@ -122,7 +132,7 @@ public extension Address {
         //
         //        return [data subdataWithRange:NSMakeRange(1, 20)];
         
-        
+        return data!
     }
     
     static func hash160ToAddress(data: Data) ->String {
