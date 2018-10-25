@@ -28,6 +28,7 @@
 		2C83E2FC2162F4E4002432FB /* ConnectMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2E62162F4E4002432FB /* ConnectMgr.swift */; };
 		2C83E2FD2162F4E4002432FB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83E2E82162F4E4002432FB /* Account.swift */; };
 		A9EC508168EB31CC510EBEA4 /* Pods_OntologySwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4A4EA85F7074CA180190D3 /* Pods_OntologySwiftSDK.framework */; };
+		D10B499321815E2600579D4F /* OntUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10B499221815E2600579D4F /* OntUtil.swift */; };
 		D1164BB8216DF3C400B7E922 /* Ont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1164BB7216DF3C400B7E922 /* Ont.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		758D5C0BDA76230117701FA9 /* Pods-OntologySwiftSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDK/Pods-OntologySwiftSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		87E4CA18D8F17CA503EB73AB /* Pods-OntologySwiftSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		90686B85DB2CF05865CE48A9 /* Pods-OntologySwiftSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDK/Pods-OntologySwiftSDK.release.xcconfig"; sourceTree = "<group>"; };
+		D10B499221815E2600579D4F /* OntUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OntUtil.swift; sourceTree = "<group>"; };
+		D10B499421815E6E00579D4F /* neoutils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = neoutils.framework; sourceTree = "<group>"; };
 		D1164BB7216DF3C400B7E922 /* Ont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ont.swift; sourceTree = "<group>"; };
 		D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OntologySwiftSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09413611F8C202834359A3C /* Pods-OntologySwiftSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				2C20E5992178B9E600DD851B /* StaticTools.swift */,
+				D10B499221815E2600579D4F /* OntUtil.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 		8364B9C60EAB9D1111F82EC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D10B499421815E6E00579D4F /* neoutils.framework */,
 				1F4A4EA85F7074CA180190D3 /* Pods_OntologySwiftSDK.framework */,
 				D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */,
 			);
@@ -462,6 +467,7 @@
 				2C83E2F62162F4E4002432FB /* WebsocketClient.swift in Sources */,
 				2C83E2EE2162F4E4002432FB /* KeyType.swift in Sources */,
 				2C83E2EB2162F4E4002432FB /* SignatureScheme.swift in Sources */,
+				D10B499321815E2600579D4F /* OntUtil.swift in Sources */,
 				2C83E2F32162F4E4002432FB /* TransactionType.swift in Sources */,
 				2C83E2F82162F4E4002432FB /* Address.swift in Sources */,
 				2C83E2EA2162F4E4002432FB /* Curve.swift in Sources */,
@@ -620,7 +626,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/SupportingFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -650,7 +659,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/SupportingFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

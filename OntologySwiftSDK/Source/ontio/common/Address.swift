@@ -71,7 +71,7 @@ public extension Address {
             throw ErrorCode.InvalidData
         }
         let Hash160Data = Address.hash160ToData(uncheckStr: uncheckedString)
-        try self.init(hexString: uncheckedString,publicKeyHash160: Hash160Data)
+        try self.init(hexString: uncheckedString,publicKeyHash160: Hash160Data!)
     }
     
     init(publicKey: PublicKey, network: Network) {
@@ -102,37 +102,21 @@ public extension Address {
         guard data.count > 4 else {
             return nil
         }
-        
-        //let checkData = CFDataCreate(SecureAllocator(), data.bytes, data.count-4)
-
-//        NSData *d = self.base58ToData;
-//
-//        if (d.length < 4) return nil;
-//
-//        NSData *data = CFBridgingRelease(CFDataCreate(SecureAllocator(), d.bytes, d.length - 4));
-//
-//        // verify checksum
-//        NSData *datachecksum1 = [[data SHA256_2] subdataWithRange:NSMakeRange(0, 4)];
-//        NSData *datachecksum2 = [d subdataWithRange:NSMakeRange(d.length - 4, 4)];
-//        if (![datachecksum1 isEqual:datachecksum2]) return nil;
+        let checkData = CFDataCreate(secureAllocator, data.bytes, data.count-4)! as Data
+        let datachecksum1 = Crypto.sha2Sha256_twice(checkData).subdata(in: 0...3)
+        let datachecksum2 = checkData .subdata(in: (data.count - 4) ... (data.count - 1))
+        guard datachecksum1 == datachecksum2 else{
+            return nil
+        }
         return data
     }
     
-    static func hash160ToData(uncheckStr: String) -> Data {
+    static func hash160ToData(uncheckStr: String) -> Data?{
         let data = base58checkToData(addressStr: uncheckStr)
-        
-        //let data = base
-        //        unsigned char COIN_VERSION = 0x17;
-        //        unsigned char data_coin_version;
-        //
-        //        [data getBytes:&data_coin_version length:1];
-        //        if (data_coin_version != COIN_VERSION) {
-        //            return nil;
-        //        }
-        //
-        //        return [data subdataWithRange:NSMakeRange(1, 20)];
-        
-        return data!
+        guard data?.count == 160/8 + 1 else{
+            return nil
+        }
+        return data?.subdata(in: 1...((data?.count)! - 2))
     }
     
     static func hash160ToAddress(data: Data) ->String {
@@ -140,6 +124,21 @@ public extension Address {
         let program = Data(bytes: COIN_VERSION, count: 1)
         let hexData = program + data
         return base58checkWithData(data:hexData)
+    }
+    
+    static func WifToPrivateKey(wif:String) -> Data?{
+        let privKeyData = base58checkToData(addressStr: wif)
+        guard privKeyData != nil && privKeyData?.count == 34 else {
+            return nil
+        }
+        
+        let version = privKeyData?.subdata(in: 0...1).bytes.first
+        let compressed = privKeyData?.subdata(in: 32...33).bytes.first
+        if version != 0x80 || compressed != 0x01 {
+            return nil
+        }
+        return privKeyData?.subdata(in: 1...33)
+        
     }
     
 
