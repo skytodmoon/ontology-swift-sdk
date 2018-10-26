@@ -2,12 +2,24 @@ import UIKit
 import scrypt
 import EllipticCurveKit
 import CryptoSwift
-
 public extension Data
 {
     public func subdata(in range: CountableClosedRange<Data.Index>) -> Data
     {
         return self.subdata(in: range.lowerBound..<range.upperBound + 1)
+    }
+}
+
+public extension Dictionary {
+    
+    func toJSONString() -> String? {
+        if let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) {
+            if let json = String(data: data, encoding: String.Encoding.utf8) {
+                return json
+            }
+        }
+        
+        return nil
     }
 }
 let gen = AnyKeyGenerator<Secp256r1>.generateNewKeyPair()
@@ -42,7 +54,7 @@ keystore["parameters"] = parameters
 keystore["scrypt"] = scryptDic
 let saltStr = String(data: salt.base64EncodedData(), encoding: String.Encoding.utf8)
 keystore["salt"] = saltStr
-
+keystore["algorithm"] = "ECDSA"
 let passwordData = password.precomposedStringWithCompatibilityMapping.data(using: String.Encoding.utf8)
 
 let status:Array<UInt8> = try!Scrypt.init(password: (passwordData?.bytes)!, salt: salt.bytes, dkLen: dkLen, N: n, r: r, p: p).calculate()
@@ -61,19 +73,18 @@ let aad:Data = addressStr .data(using: .utf8)!
 let gcm = GCM(iv: iv.bytes, additionalAuthenticatedData: aad.bytes, mode: .combined)
 do {
     let aes = try AES(key: derivedhalf2.bytes, blockMode: gcm, padding: .noPadding)
+    print(gen.privateKey.asData.bytes , gen.privateKey.asData.bytes.count)
     let cipheredData = try aes.encrypt(gen.privateKey.asData.bytes)
     //let tag = gcm.authenticationTag
     let key = Data(bytes: cipheredData)
-    keystore["key"] = key.base64EncodedData()
+    keystore["key"] = key.base64EncodedString()
+    print(key.base64EncodedString().count)
 
 } catch{
     print("ErrorCode.EncriptPrivateKeyError1")
 }
 print(keystore)
-//let data:Data = try! JSONSerialization.data(withJSONObject: keystore, options: .prettyPrinted)
-////guard let data:Data = try? JSONSerialization.data(withJSONObject: keystore, options: .prettyPrinted) else {
-////    print("ErrorCode.EncriptPrivateKeyError2")
-////}
-//print(data)
-//let result = data.toHexString()
-//print(result)
+let testKey = "FgnNWTxS7Nu76t3YgZAOWNcrWQQF9O+aj9vPlY2W4/+kvTwZT04bRqcieGQ3wqFT"
+print(testKey.count)
+
+

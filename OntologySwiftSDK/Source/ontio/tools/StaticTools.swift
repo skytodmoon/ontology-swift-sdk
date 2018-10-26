@@ -47,4 +47,42 @@ public let secureAllocator: CFAllocator = {
     }
 
 
+public extension Dictionary {
+    
+    func toJSONString() -> String? {
+        if let data = try? JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions(rawValue: 0)) {
+            if let json = String(data: data, encoding: String.Encoding.utf8) {
+                return json
+            }
+        }
+        
+        return nil
+    }
+}
 
+public extension Data
+{
+    public func subdata(in range: CountableClosedRange<Data.Index>) -> Data
+    {
+        return self.subdata(in: range.lowerBound..<range.upperBound + 1)
+    }
+}
+
+public extension Dictionary
+{
+    public func convertDictionaryToString() -> String {
+        var result:String = ""
+        do {
+            //如果设置options为JSONSerialization.WritingOptions.prettyPrinted，则打印格式更好阅读
+            let jsonData = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions.init(rawValue: 0))
+            
+            if let JSONString = String(data: jsonData, encoding: String.Encoding.utf8) {
+                result = JSONString
+            }
+            
+        } catch {
+            result = ""
+        }
+        return result
+    }
+}

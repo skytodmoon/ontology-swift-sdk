@@ -65,7 +65,7 @@ public extension Account{
         "type": "A",
         "label": name as Any,
         "address": address.addressStr
-        ] as [String:Any]
+        ] //as [String:Any]
         let scryptDic = [
             "r": String(r),
             "p": String(p),
@@ -76,6 +76,7 @@ public extension Account{
             "curve": "P-256"
         ]
         keystore["parameters"] = parameters
+        keystore["algorithm"] = "ECDSA"
         keystore["scrypt"] = scryptDic
         keystore["salt"] = String(data: salt.base64EncodedData(), encoding: .utf8)
         let passwordData = password.precomposedStringWithCompatibilityMapping.data(using: .utf8)
@@ -85,7 +86,7 @@ public extension Account{
             return nil
         }
         let derivedkey = Data(bytes: status)
-        let derivedhalf2 = derivedkey.subdata(in: 31...63)
+        let derivedhalf2 = derivedkey.subdata(in: 32...63)
         let iv = derivedkey.subdata(in: 0...11)
         
         //AES-GSM
@@ -96,17 +97,19 @@ public extension Account{
             let cipheredData = try aes.encrypt(keyPair.privateKey.asData.bytes)
             //let tag = gcm.authenticationTag
             let key = Data(bytes: cipheredData)
-            keystore["key"] = key.base64EncodedData()
+            keystore["key"] = key.base64EncodedString()
             
         } catch{
             throw ErrorCode.EncriptPrivateKeyError
         }
-        guard let data:Data = try JSONSerialization.data(withJSONObject: keystore, options: .prettyPrinted) else {
-            return nil
-        }
 
-        return data.toHexString()
+        return keystore.convertDictionaryToString()
     }
+    
+    //decrypt method
+    
+
+
 }
 
 
