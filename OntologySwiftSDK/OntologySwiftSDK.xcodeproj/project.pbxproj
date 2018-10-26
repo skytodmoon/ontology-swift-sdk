@@ -72,6 +72,7 @@
 		D10B499221815E2600579D4F /* OntUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OntUtil.swift; sourceTree = "<group>"; };
 		D10B499421815E6E00579D4F /* neoutils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = neoutils.framework; sourceTree = "<group>"; };
 		D1164BB7216DF3C400B7E922 /* Ont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ont.swift; sourceTree = "<group>"; };
+		D13E4A2D2182F102001A6C8F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D6793DF7BE9DA60FA2430E80 /* Pods_OntologySwiftSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OntologySwiftSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09413611F8C202834359A3C /* Pods-OntologySwiftSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OntologySwiftSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OntologySwiftSDKTests/Pods-OntologySwiftSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +101,7 @@
 		2C83E29F2162F1F1002432FB = {
 			isa = PBXGroup;
 			children = (
+				D13E4A2C2182F09A001A6C8F /* TESTPLAY */,
 				2C83E2AA2162F1F1002432FB /* Products */,
 				2C83E2AB2162F1F1002432FB /* Source */,
 				2C83E2B62162F1F1002432FB /* OntologySwiftSDKTests */,
@@ -278,6 +280,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D13E4A2C2182F09A001A6C8F /* TESTPLAY */ = {
+			isa = PBXGroup;
+			children = (
+				D13E4A2D2182F102001A6C8F /* MyPlayground.playground */,
+			);
+			path = TESTPLAY;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -434,6 +444,7 @@
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/EllipticCurveKit/EllipticCurveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/scrypt/scrypt.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -441,6 +452,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EllipticCurveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

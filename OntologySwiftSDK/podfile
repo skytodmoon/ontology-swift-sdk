@@ -19,6 +19,7 @@ def pods()
     #pod 'BigInt'
     #pod 'CryptoSwift'
     pod 'EllipticCurveKit', '~> 0.0.1'
+    pod 'scrypt'
 end
 
 target 'OntologySwiftSDK' do

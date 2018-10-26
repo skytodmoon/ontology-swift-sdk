@@ -143,7 +143,7 @@ public extension Address {
     
 
 }
-extension Data
+public extension Data
 {
     public func subdata(in range: CountableClosedRange<Data.Index>) -> Data
     {

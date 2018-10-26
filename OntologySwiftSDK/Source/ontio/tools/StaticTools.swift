@@ -17,20 +17,6 @@ public let secureAllocator: CFAllocator = {
       context.deallocate = secureDeallocate;
       return CFAllocatorCreate(kCFAllocatorDefault, &context).takeRetainedValue()
   }()
-//    static let shared:CFAllocator = SecureAllocator()
-//    var allocator:CFAllocator?
-////    class func instance() -> SecureAllocator {
-////        return _instance
-////    }
-//    private init(){
-//        var context = CFAllocatorContext()
-//        context.version = 0
-//        CFAllocatorGetContext(kCFAllocatorDefault, &context)
-//        context.allocate = secureAllocate
-//        context.reallocate = secureReallocate
-//        context.deallocate = secureDeallocate
-//        allocator = (CFAllocatorCreate(kCFAllocatorDefault,&context) as! CFAllocator)
-//    }
 
     private func secureAllocate(allocSize:CFIndex,hint:CFOptionFlags,info:UnsafeMutableRawPointer?) -> UnsafeMutableRawPointer?{
         guard let ptr = malloc(MemoryLayout<CFIndex>.stride + allocSize) else { return nil }
