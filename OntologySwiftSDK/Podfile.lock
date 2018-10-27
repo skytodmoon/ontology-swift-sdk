@@ -10,7 +10,7 @@ PODS:
   - SipHash (1.2.2)
 
 DEPENDENCIES:
-  - EllipticCurveKit (~> 0.0.1)
+  - EllipticCurveKit
   - scrypt
 
 SPEC REPOS:
@@ -28,6 +28,6 @@ SPEC CHECKSUMS:
   scrypt: 3fe5b1a3b0976f97cd87488673a8f7c65708cc84
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
 
-PODFILE CHECKSUM: 1b1e37933e6e64867256cda292cafabd021b6a0f
+PODFILE CHECKSUM: 7d6e935f04cdad9b05ff31486401edb7646f5bdd
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.5.3

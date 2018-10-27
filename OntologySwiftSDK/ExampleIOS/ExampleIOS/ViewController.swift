@@ -18,11 +18,15 @@ class ViewController: UIViewController {
         print(gen.privateKey)
         
         let address = Address(keyPair: gen, network: .default)
-        print(address)
-        let act = Account.init(keyPair: gen, network: .default)
+        print(address.addressStr)
+        print(Address.PrivateKeyToWif(privateKey: gen.privateKey) as Any)
+        
+        var act = Account.init(keyPair: gen, network: .default)
         do {
-            let jsonStr = try act.encrypt(password: address.addressStr)
+            let jsonStr = try act.encrypt(password: "19860502")
             print(jsonStr as Any)
+            let keyStr = try act.decrypt(keystore: jsonStr!)
+            print(keyStr as Any)
         } catch {
             print("error")
         }

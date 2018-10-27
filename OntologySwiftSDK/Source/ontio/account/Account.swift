@@ -29,6 +29,7 @@ public struct Account {
     public let network: Network
     public var wif:String?
     public var name:String?
+    public var password:String?
     
     public init(keyPair: KeyPair, network: Network = .default){
         self.keyPair = keyPair
@@ -54,7 +55,9 @@ public struct Account {
 
 public extension Account{
     //encrypt method
-    public func encrypt(password:String) throws -> String? {
+    public mutating func encrypt(password:String) throws -> String? {
+        //temp test use
+        self.password = password
         let n = 4096
         let r = 8
         let p = 8
@@ -106,7 +109,67 @@ public extension Account{
         return keystore.convertDictionaryToString()
     }
     
-    //decrypt method
+    public mutating func decrypt(keystore:String) throws -> String?{
+        var privateKeyData:String = ""
+        let keystoreDic:Dictionary = keystore.convertStringToDictionary()!
+        guard keystoreDic["address"] != nil &&
+            keystoreDic["salt"] != nil &&
+            keystoreDic["key"] != nil &&
+            keystoreDic["type"] != nil &&
+            keystoreDic["algorithm"] != nil &&
+            keystoreDic["scrypt"] != nil &&
+            keystoreDic["type"] as! String == "A" &&
+            keystoreDic["algorithm"] as! String == "ECDSA"
+            else {
+            throw ErrorCode.AccountInvalidInput
+        }
+        if name == nil && keystoreDic["label"] != nil{
+            name = keystoreDic["label"]?.string
+        }
+        let scryDic = keystoreDic["scrypt"]
+        let n = Int(scryDic!["n"]as! String)
+        let r = Int(scryDic!["r"]as! String)
+        let p = Int(scryDic!["p"]as! String)
+        let dkLen = Int(scryDic!["dkLen"]as! String)
+        self.password = "19860502"
+        let passwordData = password!.precomposedStringWithCompatibilityMapping.data(using: .utf8)
+        let saltStr = keystoreDic["salt"]as! String
+        let salt:Data = Data(base64Encoded: saltStr, options: Data.Base64DecodingOptions.init(rawValue: 0))!
+        let address = keystoreDic["address"]as! String
+        let keyStr = keystoreDic["key"]as! String
+        let key = Data(base64Encoded: keyStr, options: Data.Base64DecodingOptions.init(rawValue: 0))
+        
+        //Scrypt
+        let status:Array<UInt8> = try!Scrypt.init(password: (passwordData?.bytes)!, salt: salt.bytes, dkLen: dkLen!, N: n!, r: r!, p: p!).calculate()
+        if status.count != dkLen {
+            return nil
+        }
+        
+        let derivedkey = Data(bytes: status)
+        
+        let derivedhalf2 = derivedkey.subdata(in: 32...63)
+        let iv = derivedkey.subdata(in: 0...11)
+        
+        //AES-GSM
+        let encryptedkey:Data = (key?.subdata(in: 0...(key!.count - 16 - 1)))!
+        let tag:Data = (key?.subdata(in: (key!.count - 16)...key!.count - 1))!
+        let aad:Data = address.data(using: .utf8)!
+        let gcm = GCM(iv: iv.bytes, authenticationTag: tag.bytes, additionalAuthenticatedData: aad.bytes, mode: .combined)
+        do {
+            let aes = try AES(key: derivedhalf2.bytes, blockMode: gcm, padding: .noPadding)
+            let cipheredData = try aes.decrypt(encryptedkey.bytes)
+            //let tag = gcm.authenticationTag
+            privateKeyData = Data(bytes: cipheredData).toHexString()
+            //keystore["key"] = key.base64EncodedString()
+            
+        } catch{
+            throw ErrorCode.EncriptPrivateKeyError
+        }
+        
+        return privateKeyData
+    }
+    
+
     
 
 

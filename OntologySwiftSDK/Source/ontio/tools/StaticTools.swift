@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 public let secureAllocator: CFAllocator = {
       var context = CFAllocatorContext()
@@ -85,4 +86,25 @@ public extension Dictionary
         }
         return result
     }
+    
+
+}
+
+public extension String{
+    func convertStringToDictionary() -> [String:AnyObject]? {
+        if let data = self.data(using: String.Encoding.utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: [JSONSerialization.ReadingOptions.init(rawValue: 0)]) as? [String:AnyObject]
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        return nil
+    }
+}
+
+public extension AES{
+
+    
+
 }

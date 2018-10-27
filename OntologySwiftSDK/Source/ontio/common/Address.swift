@@ -141,6 +141,13 @@ public extension Address {
         
     }
     
+    static func PrivateKeyToWif(privateKey:PrivateKey) -> String?{
+        let prefix:[Byte] = [0x80]
+        let subfix:[Byte] = [0x01]
+        let privateDataBytes = prefix + privateKey.asData.bytes + subfix
+        return base58checkWithData(data: privateDataBytes.asData)
+    }
+    
 
 }
 

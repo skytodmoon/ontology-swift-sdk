@@ -18,7 +18,7 @@ def pods()
     #pod 'SwiftyJSON'
     #pod 'BigInt'
     #pod 'CryptoSwift'
-    pod 'EllipticCurveKit', '~> 0.0.1'
+    pod 'EllipticCurveKit'#, '~> 0.0.1'
     pod 'scrypt'
 end
 
