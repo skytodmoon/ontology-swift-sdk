@@ -40,14 +40,14 @@ public struct Address {
 
 public extension Address {
     
-    init(data: Data) {
-        do {
-            try self.init(hexString: Base58.encode(data), publicKeyHash160: data)
-        } catch  {
-           fatalError("Incorrect implementation, using `publicKey:network` initializer should never result in error: `\(error)`")
-        }
-        
-    }
+//    init(data: Data) {
+//        do {
+//            try self.init(hexString: Base58.encode(data), publicKeyHash160: data)
+//        } catch  {
+//           fatalError("Incorrect implementation, using `publicKey:network` initializer should never result in error: `\(error)`")
+//        }
+//
+//    }
     init?(uncheckedData: Data) throws {
         if uncheckedData.count != 20 {
             throw ErrorCode.InvalidData
@@ -75,25 +75,20 @@ public extension Address {
         try self.init(hexString: uncheckedAddressString,publicKeyHash160: Hash160Data!)
     }
     
-    init(publicKey: PublicKey, network: Network) {
+    init?(publicKey: PublicKey, network: Network) throws {
         let system = Ont(network)
-        //let compressedHash = system.compressedHash(from: publicKey)
-        let publicKeyData = system.compressedHash(from: publicKey)
-//        do {
-            self.init(data: publicKeyData)
-//        } catch {
-//            fatalError("Incorrect implementation, using `publicKey:network` initializer should never result in error: `\(error)`")
-//        }
+        let addressStr = system.addressHashForOnt(of: publicKey.data.compressed)
+        try self.init(uncheckedAddressString: addressStr)
+
     }
     
-    init(keyPair: KeyPair, network: Network) {
-        self.init(publicKey: keyPair.publicKey, network: network)
+    init(keyPair: KeyPair, network: Network) throws{
+        try self.init(publicKey: keyPair.publicKey, network: network)!
     }
 }
 public extension Address {
     
     static func base58checkWithData(data: Data) -> String {
-        print(Crypto.sha2Sha256_twice(data).subdata(in: 0...3))
         let addressData = data + Crypto.sha2Sha256_twice(data).subdata(in: 0...3)
         let baseDataStr = Base58.encode(addressData)
         return baseDataStr

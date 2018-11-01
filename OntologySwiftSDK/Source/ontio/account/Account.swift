@@ -31,9 +31,9 @@ public struct Account {
     public var name:String?
     public var password:String?
     
-    public init(keyPair: KeyPair, network: Network = .default){
+    public init(keyPair: KeyPair, network: Network = .default) throws{
         self.keyPair = keyPair
-        self.address = Address(keyPair: keyPair, network: network)
+        self.address = try Address(keyPair: keyPair, network: network)
         self.network = network
     }
     //import from wif
@@ -42,13 +42,13 @@ public struct Account {
         let privateKeyData = Address.WifToPrivateKey(wif: wif)
         let privateKey = PrivateKey(base64: privateKeyData!)
         self.keyPair = KeyPair(privateKeyHex: ((privateKey?.asHex())!))!
-        self.address = Address(keyPair: keyPair, network: network)
+        self.address = try Address(keyPair: keyPair, network: network)
         self.network = network
     }
     //import from private key
-    public init(privateKeyHex: String, network: Network = .default){
+    public init(privateKeyHex: String, network: Network = .default) throws{
         self.keyPair = KeyPair(privateKeyHex: privateKeyHex)!
-        self.address = Address(keyPair: keyPair, network: network)
+        self.address = try Address(keyPair: keyPair, network: network)
         self.network = network
     }
 }

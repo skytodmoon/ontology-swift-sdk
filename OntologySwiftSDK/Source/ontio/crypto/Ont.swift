@@ -26,16 +26,13 @@ public struct Ont: DistributedSystem {
 public extension Ont {
     typealias Curve = Secp256r1
     
-    func addressHash(of data: Data) -> String{
+    func addressHashForOnt(of data: Data) -> String{
         //ont address method
         
         let CHECKSIG:[Byte] = [0xAC]
         let program = data + Data(bytes: CHECKSIG, count: 1)
-        let COIN_VERSION:[Byte] = [0x17]
-        let addressTagData = Data(bytes: COIN_VERSION, count: 1)
-        let hexData = addressTagData + Crypto.sha2Sha256_ripemd160(program)
-
-        return Address.base58checkWithData(data:hexData)
+        let hash160 = Crypto.sha2Sha256_ripemd160(program)
+        return Address.hash160ToAddress(data: hash160)
     }
     
 }
