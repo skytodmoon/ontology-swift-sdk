@@ -67,6 +67,21 @@ public extension Data
     {
         return self.subdata(in: range.lowerBound..<range.upperBound + 1)
     }
+    
+    public func conventToHexStr() -> String?{
+        let CHexLookup : [Character] =
+            [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" ]
+        
+        var stringToReturn = ""
+        
+        for oneByte in self.bytes {
+            let asInt = Int(oneByte)
+            stringToReturn.append(CHexLookup[asInt >> 4])
+            stringToReturn.append(CHexLookup[asInt & 0x0f])
+        }
+        return stringToReturn
+     
+    }
 }
 
 public extension Dictionary
@@ -101,6 +116,7 @@ public extension String{
         }
         return nil
     }
+    
 }
 
 public extension AES{

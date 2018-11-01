@@ -36,6 +36,8 @@ public extension String{
     }
 }
 
+
+
 //let gen = AnyKeyGenerator<Secp256r1>.generateNewKeyPair()
 //print(gen.publicKey)
 //print(gen.privateKey)

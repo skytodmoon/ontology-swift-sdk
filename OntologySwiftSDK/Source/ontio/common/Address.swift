@@ -18,6 +18,7 @@ import EllipticCurveKit
 
 public struct Address {
     public static let lengthOfValidAddresses: Int = 34
+    public static let COIN_VERSION: [Byte] = [0x17]
     
     /// The compressed hashed data as a hexadecimal string
     /// which checksum has been confirmed to be correct.
@@ -66,12 +67,12 @@ public extension Address {
     
 
     
-    init?(uncheckedString: String) throws{
-        if uncheckedString.count !=  Address.lengthOfValidAddresses{
+    init?(uncheckedAddressString: String) throws{
+        if uncheckedAddressString.count !=  Address.lengthOfValidAddresses{
             throw ErrorCode.InvalidData
         }
-        let Hash160Data = Address.hash160ToData(uncheckStr: uncheckedString)
-        try self.init(hexString: uncheckedString,publicKeyHash160: Hash160Data!)
+        let Hash160Data = Address.addressToHash160(uncheckStr: uncheckedAddressString)
+        try self.init(hexString: uncheckedAddressString,publicKeyHash160: Hash160Data!)
     }
     
     init(publicKey: PublicKey, network: Network) {
@@ -92,36 +93,42 @@ public extension Address {
 public extension Address {
     
     static func base58checkWithData(data: Data) -> String {
-        let addressData = data + Crypto.sha2Sha256(data).subdata(in: 0...3)
+        print(Crypto.sha2Sha256_twice(data).subdata(in: 0...3))
+        let addressData = data + Crypto.sha2Sha256_twice(data).subdata(in: 0...3)
         let baseDataStr = Base58.encode(addressData)
         return baseDataStr
     }
     
     static func base58checkToData(addressStr: String) -> Data? {
+
         let data:Data = Base58.decode(addressStr)
         guard data.count > 4 else {
             return nil
         }
+        guard data.count == 25 else {
+            return nil
+        }
         let checkData = CFDataCreate(secureAllocator, data.bytes, data.count-4)! as Data
         let datachecksum1 = Crypto.sha2Sha256_twice(checkData).subdata(in: 0...3)
-        let datachecksum2 = checkData .subdata(in: (data.count - 4) ... (data.count - 1))
+        let datachecksum2 = data .subdata(in: (data.count - 4) ... (data.count - 1))
         guard datachecksum1 == datachecksum2 else{
             return nil
         }
-        return data
+        return checkData
     }
     
-    static func hash160ToData(uncheckStr: String) -> Data?{
+    static func addressToHash160(uncheckStr: String) -> Data?{
         let data = base58checkToData(addressStr: uncheckStr)
-        guard data?.count == 160/8 + 1 else{
+        guard data?.count == 21 else{
             return nil
         }
-        return data?.subdata(in: 1...((data?.count)! - 2))
+        return data?.subdata(in: 1...((data?.count)! - 1))
     }
     
     static func hash160ToAddress(data: Data) ->String {
-        let COIN_VERSION:[Byte] = [0x17]
         let program = Data(bytes: COIN_VERSION, count: 1)
+//        let hexStr = program.conventToHexStr()! + data.conventToHexStr()!
+//        let hexData = Data(hex: hexStr)
         let hexData = program + data
         return base58checkWithData(data:hexData)
     }

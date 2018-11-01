@@ -54,6 +54,21 @@ public struct Account {
 }
 
 public extension Account{
+    //serializePrivateKey
+    public func serializePrivateKey() -> [Byte]{
+        let privateKeyData = keyPair.privateKey.asData
+        if privateKeyData.count == 33 {
+            return privateKeyData.subdata(in: 1...privateKeyData.count-1).bytes
+        }else if privateKeyData.count == 31{
+            return [0]+privateKeyData.bytes
+        }else{
+            return privateKeyData.bytes
+        }
+    }
+    //serializePublicKey
+    public func serializePublicKey() -> [Byte]{
+        return keyPair.publicKey.data.compressed.bytes
+    }
     //encrypt method
     public mutating func encrypt(password:String) throws -> String? {
         //temp test use
@@ -92,7 +107,7 @@ public extension Account{
         let derivedhalf2 = derivedkey.subdata(in: 32...63)
         let iv = derivedkey.subdata(in: 0...11)
         
-        //AES-GSM
+        //AES-GCM
         let aad:Data = address.addressStr .data(using: .utf8)!
         let gcm = GCM(iv: iv.bytes, additionalAuthenticatedData: aad.bytes, mode: .combined)
         do {
@@ -131,7 +146,6 @@ public extension Account{
         let r = Int(scryDic!["r"]as! String)
         let p = Int(scryDic!["p"]as! String)
         let dkLen = Int(scryDic!["dkLen"]as! String)
-        self.password = "19860502"
         let passwordData = password!.precomposedStringWithCompatibilityMapping.data(using: .utf8)
         let saltStr = keystoreDic["salt"]as! String
         let salt:Data = Data(base64Encoded: saltStr, options: Data.Base64DecodingOptions.init(rawValue: 0))!
@@ -150,7 +164,7 @@ public extension Account{
         let derivedhalf2 = derivedkey.subdata(in: 32...63)
         let iv = derivedkey.subdata(in: 0...11)
         
-        //AES-GSM
+        //AES-GCM
         let encryptedkey:Data = (key?.subdata(in: 0...(key!.count - 16 - 1)))!
         let tag:Data = (key?.subdata(in: (key!.count - 16)...key!.count - 1))!
         let aad:Data = address.data(using: .utf8)!

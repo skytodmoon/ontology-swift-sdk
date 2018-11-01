@@ -8,35 +8,35 @@
 
 import Foundation
 public class Helper{
-    static public func hexToBytes(hexStr: String) throws -> [UInt8] {
-        if hexStr.count == 0 {
-            return [UInt8]()
-        }
-        if hexStr.count % 2 == 1 {
-            throw Exception.IllegalArgumentException
-        }
-        
-        var result: [UInt8] = [UInt8](repeating:0, count:hexStr.count/2)
-        for i in 0...hexStr.count {
-            let range: Range = Range.init(NSRange(location: i * 2, length: i * 2 + 2))!
-            let tempStr = hexStr[range]
-            result[i] = UInt8(hexStringToInt(from: tempStr))
-        }
-        return [0000]
-        
-    }
-    
-    static func hexStringToInt(from:String) -> Int {
-        let str = from.uppercased()
-        var sum = 0
-        for i in str.utf8 {
-            sum = sum * 16 + Int(i) - 48 // 0-9 从48开始
-            if i >= 65 {                 // A-Z 从65开始，但有初始值10，所以应该是减去55
-                sum -= 7
-            }
-        }
-        return sum
-    }
+//    static public func hexToBytes(hexStr: String) throws -> [UInt8] {
+//        if hexStr.count == 0 {
+//            return [UInt8]()
+//        }
+//        if hexStr.count % 2 == 1 {
+//            throw Exception.IllegalArgumentException
+//        }
+//        
+//        var result: [UInt8] = [UInt8](repeating:0, count:hexStr.count/2)
+//        for i in 0...hexStr.count {
+//            let range: Range = Range.init(NSRange(location: i * 2, length: i * 2 + 2))!
+//            let tempStr = hexStr[range]
+//            result[i] = UInt8(hexStringToInt(from: tempStr))
+//        }
+//        return result
+//        
+//    }
+//    
+//    func hexStringToInt(from:String) -> Int {
+//        let str = from.uppercased()
+//        var sum = 0
+//        for i in str.utf8 {
+//            sum = sum * 16 + Int(i) - 48 // 0-9 从48开始
+//            if i >= 65 {                 // A-Z 从65开始，但有初始值10，所以应该是减去55
+//                sum -= 7
+//            }
+//        }
+//        return sum
+//    }
 }
 
 // 下标截取任意位置的便捷方法
