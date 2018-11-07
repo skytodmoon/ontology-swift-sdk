@@ -89,7 +89,7 @@ public extension Address {
 public extension Address {
     
     static func base58checkWithData(data: Data) -> String {
-        let addressData = data + Crypto.sha2Sha256_twice(data).subdata(in: 0...3)
+        let addressData = data + Crypto.sha2Sha256_twice(data).prefix(4)
         let baseDataStr = Base58.encode(addressData)
         return baseDataStr
     }
@@ -104,8 +104,8 @@ public extension Address {
             return nil
         }
         let checkData = CFDataCreate(secureAllocator, data.bytes, data.count-4)! as Data
-        let datachecksum1 = Crypto.sha2Sha256_twice(checkData).subdata(in: 0...3)
-        let datachecksum2 = data .subdata(in: (data.count - 4) ... (data.count - 1))
+        let datachecksum1 = Crypto.sha2Sha256_twice(checkData).prefix(4)
+        let datachecksum2 = data .suffix(4)
         guard datachecksum1 == datachecksum2 else{
             return nil
         }

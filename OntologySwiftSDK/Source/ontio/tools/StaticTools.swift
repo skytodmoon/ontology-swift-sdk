@@ -119,8 +119,22 @@ public extension String{
     
 }
 
-public extension AES{
-
+public extension NSMutableData{
+    func appendUInt8(value: UInt8) {
+        self.append([value] as [UInt8], length: 1)
+    }
     
-
+    public func pushData(data:Data){
+        self .appendUInt8(value: UInt8(data.count))
+//        if data.count <= ONT_OPCODE_PUSHBYTES75 {
+//
+//        }
+        self .append(data)
+    }
 }
+
+public let ONT_OPCODE_PUSHBYTES75 = 0x4B
+public let ONT_OPCODE_PUSHDATA1 = 0x4C
+public let ONT_OPCODE_PUSHDATA2 = 0x4D
+public let ONT_OPCODE_PUSHDATA4 = 0x4E
+

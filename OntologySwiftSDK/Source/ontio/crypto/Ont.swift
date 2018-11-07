@@ -30,8 +30,10 @@ public extension Ont {
         //ont address method
         
         let CHECKSIG:[Byte] = [0xAC]
-        let program = data + Data(bytes: CHECKSIG, count: 1)
-        let hash160 = Crypto.sha2Sha256_ripemd160(program)
+        let mData:NSMutableData = NSMutableData.init()
+        mData .pushData(data: data)
+        mData.append(CHECKSIG, length: 1)
+        let hash160 =  Crypto.sha2Sha256_ripemd160(mData as Data)
         return Address.hash160ToAddress(data: hash160)
     }
     
